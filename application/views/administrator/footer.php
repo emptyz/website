@@ -1,0 +1,1 @@
+<strong>Copyright &copy; <?php echo date('Y'); ?> <a target='_BLANK' href="https://remunerasi.uns.ac.id"> Unit Pengembangan SDM dan Remunerasi</a></strong> Universitas Sebelas Maret.
