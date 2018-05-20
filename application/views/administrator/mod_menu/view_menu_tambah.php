@@ -16,6 +16,7 @@
                     <tr><th scope='row'>Urutan</th>                     <td><input type='text' class='form-control' name='e'></td></tr>
                     <tr><th scope='row'>Aktif</th>                    <td><input type='radio' name='c' value='Y'> Y <input type='radio' name='c' value='N'> N</td></tr>
                     <tr><th scope='row'>Admin Menu</th>               <td><input type='radio' name='d' value='Y'> Y <input type='radio' name='d' value='N'> N</td></tr>
+                    <tr><th scope='row'>Operator Menu</th>               <td><input type='radio' name='f' value='Y'> Y <input type='radio' name='f' value='N'> N</td></tr>
                   </tbody>
                   </table>
                 </div>

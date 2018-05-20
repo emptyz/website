@@ -18,7 +18,10 @@ class Agenda extends CI_Controller {
 			}else{
 				redirect('agenda');
 			}
+                        
 		$this->pagination->initialize($config);
+                $str_links = $this->pagination->create_links();
+        $data['links'] = explode('&nbsp;',$str_links );
 		$this->template->load(template().'/template',template().'/view_agenda',$data);
 	}
 

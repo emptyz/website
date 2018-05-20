@@ -49,7 +49,7 @@
                             <ul class="entry-meta clearfix">
                                 <li><i class="icon-calendar3"></i> <?php echo $tanggal; ?></li>
                                 <li><?php echo "<a href='" . base_url() . "berita/kategori/$row[kategori_seo]'><i class='icon-book'></i>$row[nama_kategori]</a>" ?></a></li>
-                                <li><i class="icon-user"></i> <?php echo $row['nama_lengkap']; ?></li>
+                                <li><i class="icon-user"></i> <?php echo $row['nama_pegawai']; ?></li>
                             </ul>
                             <div class="entry-content">
                                 <p><?php

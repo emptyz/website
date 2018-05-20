@@ -30,6 +30,12 @@
             $tahun = substr($tgl,0,4);
             return $tanggal.' '.$bulan.' '.$tahun;       
     } 
+    
+    function tgl_indo_bulan($tgl){
+            $tanggal = substr($tgl,8,2);
+            $bulan = getBulan(substr($tgl,5,2));
+            return $tanggal.' '.$bulan;       
+    } 
 
     function tgl_indoo($tgl){
             $tanggal = substr($tgl,8,2);

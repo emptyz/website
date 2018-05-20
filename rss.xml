@@ -30,29 +30,6 @@ The table is:
 id, username, rating, month
 </description>
 					                </item><item>
-						                <title>What does the PHP error message “Notice: Use of undefined constant” mean?</title>
-						                <link>http://localhost/website/berita/detail/what-does-the-php-error-message-“notice-use-of-undefined-constant”-mean</link>
-						                <description>PHP is writing this error in the logs: "Notice: Use of undefined constant".
-
-Error in logs:
-
-
-PHP Notice:  Use of undefined constant department - assumed &#39;department&#39; (line 5)
-PHP Notice:  Use of undefined constant name - assumed &#39;name&#39; (line 6)
-PHP Notice:  Use of undefined constant email - assumed &#39;email&#39; (line 7)
-PHP Notice:  Use of undefined constant message - assumed &#39;message&#39; (line 8)
-
-Relevant lines of code:
-
-
-$department = mysql_real_escape_string($_POST[department]);
-$name = mysql_real_escape_string($_POST[name]);
-$email = mysql_real_escape_string($_POST[email]);
-$message = mysql_real_escape_string($_POST[message]);
-
-What does it mean and why am I seeing it?
-</description>
-					                </item><item>
 						                <title>Unggah Karya Ilmiah Scopus 2018</title>
 						                <link>http://localhost/website/berita/detail/unggah-karya-ilmiah-scopus-2018</link>
 						                <description>Bagi Bapak/Ibu Dosen yang memiliki publikasi karya ilmiah Scopus dapat menggunggah karya ilmiah
@@ -332,5 +309,10 @@ Untuk video demo dan informasi lebih detail dapat diklik tombol selengkapnya.
 						                <title>Pemberian Stimulan/Insentif Publikasi Karya Ilmiah bagi Tenaga Pendidik dan Tenaga Kependidikan UNS</title>
 						                <link>http://localhost/website/berita/detail/pemberian-stimulaninsentif-publikasi-karya-ilmiah-bagi-tenaga-pendidik-dan-tenaga-kependidikan-uns</link>
 						                <description>Berikut SK Rektor No : 509/UN27/PP/2014 tentang "Pemberian Stimulan/Insentif Publikasi Karya Ilmiah bagi Tenaga Pendidik dan Tenaga Kependidikan UNS" di download pada link </description>
+					                </item><item>
+						                <title>Unggah Karya Ilmiah Scopus 2018</title>
+						                <link>http://localhost/website/berita/detail/unggah-karya-ilmiah-scopus-2018</link>
+						                <description>Bagi Bapak/Ibu Dosen yang memiliki publikasi karya ilmiah Scopus dapat menggunggah karya ilmiah
+</description>
 					                </item></channel>
   	</rss>

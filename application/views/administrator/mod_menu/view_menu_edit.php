@@ -31,6 +31,15 @@
                                                                                       <input type='radio' name='d' value='N' checked> N";
                                                                               }
                     echo "</td></tr>
+                    <tr><th scope='row'>Operator Menu</th>                  <td>"; if ($rows['opmenu'] == 'Y'){
+                                                                                echo "<input type='radio' name='f' value='Y' checked> Y 
+                                                                                      <input type='radio' name='f' value='N'> N";
+                                                                              }else{
+                                                                                echo "<input type='radio' name='f' value='Y'> Y 
+                                                                                      <input type='radio' name='f' value='N' checked> N";
+                                                                              }
+                    echo "</td></tr>
+                        
                   </tbody>
                   </table>
                 </div>

@@ -11,7 +11,8 @@ class Model_menu extends CI_model {
             'link' => $this->db->escape_str($this->input->post('b')),
             'aktif' => $this->db->escape_str($this->input->post('c')),
             'urutan' => $this->db->escape_str($this->input->post('e')),
-            'adminmenu' => $this->db->escape_str($this->input->post('d')));
+            'adminmenu' => $this->db->escape_str($this->input->post('d')),
+             'opmenu' => $this->db->escape_str($this->input->post('f')));
         $this->db->insert('mainmenu', $datadb);
     }
 
@@ -20,7 +21,8 @@ class Model_menu extends CI_model {
             'nama_menu' => $this->db->escape_str($this->input->post('a')),
             'link' => $this->db->escape_str($this->input->post('b')),
             'aktif' => $this->db->escape_str($this->input->post('c')),
-            'adminmenu' => $this->db->escape_str($this->input->post('d')));
+            'adminmenu' => $this->db->escape_str($this->input->post('d')),
+             'opmenu' => $this->db->escape_str($this->input->post('f')));
         $this->db->where('id_main', $this->input->post('id'));
         $this->db->update('mainmenu', $datadb);
     }
@@ -52,6 +54,7 @@ class Model_menu extends CI_model {
             'id_submain' => $this->db->escape_str($this->input->post('c')),
             'aktif' => $this->db->escape_str($this->input->post('e')),
             'adminsubmenu' => $this->db->escape_str($this->input->post('f')),
+            'opsubmenu' => $this->db->escape_str($this->input->post('g')),
             'urutan' => $this->db->escape_str($this->input->post('urutan')));
         $this->db->insert('submenu', $datadb);
     }
@@ -63,6 +66,7 @@ class Model_menu extends CI_model {
             'id_submain' => $this->db->escape_str($this->input->post('c')),
             'aktif' => $this->db->escape_str($this->input->post('e')),
             'adminsubmenu' => $this->db->escape_str($this->input->post('f')),
+            'opsubmenu' => $this->db->escape_str($this->input->post('g')),
             'urutan' => $this->db->escape_str($this->input->post('urutan')));
         $this->db->where('id_sub', $this->input->post('id'));
         $this->db->update('submenu', $datadb);
@@ -89,7 +93,11 @@ class Model_menu extends CI_model {
     }
 
     function mainmenu_operator() {
-        return $this->db->query("SELECT * FROM modul where status='operator' and aktif='Y' order by urutan ASC");
+        return $this->db->query("SELECT * FROM mainmenu where aktif = 'N' AND opmenu= 'Y'  order by urutan ASC");
+    }
+    
+    function submenu_operator($id_main) {
+        return $this->db->query("SELECT * FROM submenu, mainmenu WHERE submenu.id_main = mainmenu.id_main AND submenu.id_main='$id_main' AND submenu.aktif='N' AND submenu.opsubmenu='Y' ORDER BY submenu.urutan ASC");
     }
     
     

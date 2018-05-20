@@ -25,7 +25,7 @@ class Model_users extends CI_model{
     }
 
     function users_edit($id){
-        return $this->db->query("SELECT * FROM users where username='$id'");
+        return $this->db->query("SELECT * FROM remunerasi_pegawai where NIP='$id'");
     }
 
     function users_update(){

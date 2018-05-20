@@ -458,7 +458,7 @@
                     </div>
                 </div>
 
-
+                <div class="divider divider-short divider-center"></div>
                 <!-- Pagination
     ============================================= -->
                 <?php echo "<a href='" . base_url() . "berita/kategori/pengembangan-sdm' class='button button-rounded button-reveal button-large button-dark tright float-right'><i class='icon-line-arrow-right'></i><span>Pengembangan SDM Selengkapnya</span></a>" ?>

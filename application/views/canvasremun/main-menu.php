@@ -78,26 +78,21 @@
                     }
                     ?>
                     <?php
-                    if ($this->session->userdata('islogin')) {
-//                                                                      echo "<li><a href='#'>Remunerasi</a>
-//                                <ul>
-//                                <li><a href='http://remunerasi.uns.ac.id' target='_blank'>Kinerja </i></a></li>
-//                                <li><a href='http://remunerasi.uns.ac.id' target='_blank'>Penilaian </i></a></li>
-//                                <li><a href='http://remunerasi.uns.ac.id' target='_blank'>Perhitungan </i></a></li>
-//                                <li><a href='http://remunerasi.uns.ac.id' target='_blank'>Nilai Perilaku </i></a></li>
-//                                <li><a href='http://remunerasi.uns.ac.id' target='_blank'>Survei </i></a></li>
-//                               
-//                                </ul>
-//                              </li>";
-                        echo "<li><a href='#'>" . $this->session->userdata('nama') . "</a>
+                    if ($this->session->islogin) {
+                                                                      echo "<li><a href='#'>Remunerasi</a>
                                 <ul>
                                 <li><a href='http://remunerasi.uns.ac.id' target='_blank'>Kinerja </i></a></li>
                                 <li><a href='http://remunerasi.uns.ac.id' target='_blank'>Penilaian </i></a></li>
                                 <li><a href='http://remunerasi.uns.ac.id' target='_blank'>Perhitungan </i></a></li>
                                 <li><a href='http://remunerasi.uns.ac.id' target='_blank'>Nilai Perilaku </i></a></li>
                                 <li><a href='http://remunerasi.uns.ac.id' target='_blank'>Survei </i></a></li>
-
-                                <li><a href='".base_url()."/administrator/logout'>Logout <i class='icon-arrow-right2'></i></a></li>
+                               
+                                </ul>
+                              </li>";
+                        echo "<li><a href='#'>Profile</i></a>
+                                <ul>
+                                <li><a href='".base_url()."administrator/profil' target='_blank'>" . $this->session->userdata('nama') . "</a></li>
+                                <li><a href='".base_url()."administrator/logout'>Logout <i class='icon-arrow-right2'></i></a></li>
                                 </ul>
                               </li>";
   

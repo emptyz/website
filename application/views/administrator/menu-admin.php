@@ -33,15 +33,27 @@
                               </li>";
                       }
                     }
-                }elseif ($this->session->level == 'user'){
+                }elseif ($this->session->level == ''){
                     $mainuser = $this->model_menu->mainmenu_user();
                     foreach ($mainuser->result_array() as $row) {
                       echo "<li><a href='".base_url()."$row[link]'><i class='fa fa-circle-o'></i> <span>$row[nama_modul]</span></a></li>";
                     }
-                }else{
-                    $mainuser = $this->model_menu->mainmenu_operator();
-                    foreach ($mainuser->result_array() as $row) {
-                      echo "<li><a href='".base_url()."$row[link]'><i class='fa fa-circle-o'></i> <span>$row[nama_modul]</span></a></li>";
+                }elseif ($this->session->level == 'operator'){
+                    $mainoperator = $this->model_menu->mainmenu_operator();
+                    foreach ($mainoperator->result_array() as $row) {
+                      if ($this->model_menu->submenu_operator($row['id_main'])->num_rows() == 0){
+                        echo "<li><a href='".base_url()."$row[link]'><i class='glyphicon glyphicon-th-large'></i> <span>$row[nama_menu]</span></a></li>";
+                      }else{
+                        echo "<li class='treeview'>
+                                <a href='".base_url()."$row[link]'><i class='glyphicon glyphicon-th-list'></i> <span>$row[nama_menu]</span><i class='fa fa-angle-left pull-right'></i></a>
+                                <ul class='treeview-menu'>";
+                                    $sub = $this->model_menu->submenu_operator($row['id_main']);
+                                    foreach ($sub->result_array() as $rows){
+                                      echo "<li><a href='".base_url()."$rows[link_sub]'><i class='fa fa-circle-o'></i> $rows[nama_sub]</a></li>";
+                                    }
+                                echo "</ul>
+                              </li>";
+                      }
                     }
                 }
             ?>

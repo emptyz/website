@@ -27,6 +27,7 @@
                     <tr><th scope='row'>Link Sub Menu</th>            <td><input type='text' class='form-control' name='d'></td></tr>
                     <tr><th scope='row'>Aktif</th>                    <td><input type='radio' name='e' value='Y' checked> Y <input type='radio' name='e' value='N'> N</td></tr>
                     <tr><th scope='row'>Admin Sub Menu</th>           <td><input type='radio' name='f' value='Y'> Y <input type='radio' name='f' value='N' checked> N</td></tr>
+                    <tr><th scope='row'>Operator Sub Menu</th>           <td><input type='radio' name='g' value='Y'> Y <input type='radio' name='g' value='N' checked> N</td></tr>
                   </tbody>
                   </table>
                 </div>

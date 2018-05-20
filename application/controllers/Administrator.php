@@ -578,7 +578,7 @@ class Administrator extends CI_Controller {
 
     function profil() {
         cek_session_all();
-        $id = $this->session->username;
+        $id = $this->session->nip;
         $data['rows'] = $this->model_users->users_edit($id)->row_array();
         $this->template->load('administrator/template', 'administrator/mod_users/view_profil', $data);
     }
@@ -797,13 +797,13 @@ class Administrator extends CI_Controller {
     // Controller Modul Album
 
     function album() {
-        cek_session_admin();
+        cek_session_opadmin();
         $data['record'] = $this->model_album->album();
         $this->template->load('administrator/template', 'administrator/mod_album/view_album', $data);
     }
 
     function tambah_album() {
-        cek_session_admin();
+        cek_session_opadmin();
         if (isset($_POST['submit'])) {
             $this->model_album->album_tambah();
             redirect('administrator/album');
@@ -813,7 +813,7 @@ class Administrator extends CI_Controller {
     }
 
     function edit_album() {
-        cek_session_admin();
+        cek_session_opadmin();
         $id = $this->uri->segment(3);
         if (isset($_POST['submit'])) {
             $this->model_album->album_update();
@@ -825,6 +825,7 @@ class Administrator extends CI_Controller {
     }
 
     function delete_album() {
+        cek_session_opadmin();
         $id = $this->uri->segment(3);
         $this->model_album->album_delete($id);
         redirect('administrator/album');
@@ -833,13 +834,13 @@ class Administrator extends CI_Controller {
     // Controller Modul Galeri
 
     function galeri() {
-        cek_session_admin();
+        cek_session_opadmin();
         $data['record'] = $this->model_album->galeri();
         $this->template->load('administrator/template', 'administrator/mod_galeri/view_galeri', $data);
     }
 
     function tambah_galeri() {
-        cek_session_admin();
+        cek_session_opadmin();
         if (isset($_POST['submit'])) {
             $this->model_album->galeri_tambah();
             redirect('administrator/galeri');
@@ -850,7 +851,7 @@ class Administrator extends CI_Controller {
     }
 
     function edit_galeri() {
-        cek_session_admin();
+        cek_session_opadmin();
         $id = $this->uri->segment(3);
         if (isset($_POST['submit'])) {
             $this->model_album->galeri_update();
@@ -863,6 +864,7 @@ class Administrator extends CI_Controller {
     }
 
     function delete_galeri() {
+        cek_session_opadmin();
         $id = $this->uri->segment(3);
         $this->model_album->galeri_delete($id);
         redirect('administrator/galeri');

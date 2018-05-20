@@ -14,6 +14,7 @@
                         <th>Aktif</th>
                                                 <th>Urutan</th>
                         <th>Admin Menu</th>
+                        <th>Operator Menu</th>
                         <th style='width:70px'>Action</th>
                       </tr>
                     </thead>
@@ -25,8 +26,9 @@
                               <td>$row[nama_menu]</td>
                               <td><a target='_BLANK' href='".base_url()."$row[link]'>$row[link]</a></td>
                               <td>$row[aktif]</td>
-                                  <td>$row[urutan]</td>
+                              <td>$row[urutan]</td>
                               <td>$row[adminmenu]</td>
+                              <td>$row[opmenu]</td>
                               <td><center>
                                 <a class='btn btn-success btn-xs' title='Edit Data' href='".base_url()."administrator/edit_menuutama/$row[id_main]'><span class='glyphicon glyphicon-edit'></span></a>
                                 <a class='btn btn-danger btn-xs' title='Delete Data' href='".base_url()."administrator/delete_menuutama/$row[id_main]' onclick=\"return confirm('Apa anda yakin untuk hapus Data ini?')\"><span class='glyphicon glyphicon-remove'></span></a>

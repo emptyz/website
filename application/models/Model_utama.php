@@ -157,7 +157,7 @@ class Model_utama extends CI_model {
     }
 
     function agenda($start, $limit) {
-        return $this->db->query("SELECT a.*, b.NAMA FROM agenda a JOIN remunerasi_pegawai b ON a.username=b.NIP ORDER BY a.id_agenda DESC LIMIT $start, $limit");
+        return $this->db->query("SELECT a.*, b.NAMA as nama_pegawai FROM agenda a JOIN remunerasi_pegawai b ON a.username=b.NIP ORDER BY a.id_agenda DESC LIMIT $start, $limit");
     }
 
     function hitungagenda() {

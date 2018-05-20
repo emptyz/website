@@ -14,6 +14,7 @@
                         <th>Link Submenu</th>
                         <th>Aktif</th>
                         <th>Admin Submenu</th>
+                        <th>Operator Submenu</th>
                         <th>Urutan</th>
                         <th style='width:70px'>Action</th>
                     </tr>
@@ -28,6 +29,7 @@
                               <td><a target='_BLANK' href='" . base_url() . "$row[link_sub]'>$row[link_sub]</a></td>
                               <td>$row[aktif]</td>
                               <td>$row[adminsubmenu]</td>
+                              <td>$row[opsubmenu]</td>
                               <td>$row[urutan]</td>
                               <td><center>
                                 <a class='btn btn-success btn-xs' title='Edit Data' href='" . base_url() . "administrator/edit_submenu/$row[id_sub]'><span class='glyphicon glyphicon-edit'></span></a>
