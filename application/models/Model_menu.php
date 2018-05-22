@@ -85,7 +85,7 @@ class Model_menu extends CI_model {
     }
 
     function submenu_admin($id_main) {
-        return $this->db->query("SELECT * FROM submenu, mainmenu WHERE submenu.id_main = mainmenu.id_main AND submenu.id_main='$id_main' AND submenu.aktif='N' ORDER BY submenu.urutan ASC");
+        return $this->db->query("SELECT * FROM submenu, mainmenu WHERE submenu.id_main = mainmenu.id_main AND submenu.id_main='$id_main' AND submenu.aktif='N' AND submenu.adminsubmenu='Y' ORDER BY submenu.urutan ASC");
     }
 
     function mainmenu_user() {

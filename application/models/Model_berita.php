@@ -170,6 +170,7 @@ class Model_berita extends CI_model{
             if ($hasil['file_name']==''){
                 $datadb = array('id_kategori'=>$this->db->escape_str($this->input->post('b')),
                                 'username'=>$this->db->escape_str($this->input->post('u')),
+                                'editor'=>$this->db->escape_str($this->input->post('editor')),
                                 'judul'=>$this->db->escape_str($this->input->post('a')),
                                 'judul_seo'=>seo_title($this->input->post('a')),
                                 'headline'=>$this->db->escape_str($this->input->post('c')),
@@ -184,6 +185,7 @@ class Model_berita extends CI_model{
             }else{
                 $datadb = array('id_kategori'=>$this->db->escape_str($this->input->post('b')),
                                 'username'=>$this->db->escape_str($this->input->post('u')),
+                                'editor'=>$this->db->escape_str($this->input->post('editor')),
                                 'judul'=>$this->db->escape_str($this->input->post('a')),
                                 'judul_seo'=>seo_title($this->input->post('a')),
                                 'headline'=>$this->db->escape_str($this->input->post('c')),
@@ -224,5 +226,11 @@ class Model_berita extends CI_model{
 
     function komentar_delete($id){
         return $this->db->query("DELETE FROM komentar where id_komentar='$id'");
+    }
+    
+      function gambar_berita_delete($id) {
+          $gambar = $this->session->gambar;
+          unlink("asset/foto_berita/".$gambar);
+        return $this->db->query("UPDATE berita SET gambar=NULL WHERE id_berita='$id'");
     }
 }

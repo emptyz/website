@@ -4,30 +4,29 @@
 				<description>unit pengembangan sdm dan remunerasi</description>
 				<link>http://localhost/website</link> 
 				<language>id-id</language><item>
-						                <title>Illegal mix of collations error in MySql</title>
-						                <link>http://localhost/website/berita/detail/illegal-mix-of-collations-error-in-mysql</link>
-						                <description>Just got this answer from a previous question and it works a treat!
-
-
-SELECT username, (SUM(rating)/COUNT(*)) as TheAverage, Count(*) as TheCount 
-FROM ratings WHERE month=&#39;Aug&#39; GROUP BY username HAVING TheCount > 4
-ORDER BY TheAverage DESC, TheCount DESC
-
-But when I stick this extra bit in it gives this error:
-
-
-Documentation #1267 - Illegal mix of collations (latin1_swedish_ci,IMPLICIT) and (latin1_general_ci,IMPLICIT) for operation &#39;=&#39;
-
-
-
-SELECT username, (SUM(rating)/COUNT(*)) as TheAverage, Count(*) as TheCount FROM 
-ratings WHERE month=&#39;Aug&#39; 
-**AND username IN (SELECT username FROM users WHERE gender =1)**
-GROUP BY username HAVING TheCount > 4 ORDER BY TheAverage DESC, TheCount DESC
-
-The table is:
-
-id, username, rating, month
+						                <title>Pembayaran Remunerasi Kinerja Pendidik Tugas Belajar semester Pebruari - Juli 2016</title>
+						                <link>http://localhost/website/berita/detail/pembayaran-remunerasi-kinerja-pendidik-tugas-belajar-semester-pebruari--juli-2016</link>
+						                <description>Pembayaran Remunerasi Kinerja Pendidik Tugas Belajar (TB) semester Pebruari - Juli 2016 dibayarkan tanggal 30 Agustus 2016 melalui Bank BNI 46 (untuk PNS) dan Bank BTN (untuk Non PNS) berdasarkan kinerja pendidik tugas belajar semester Pebruari - Juli 2015.
+</description>
+					                </item><item>
+						                <title>Pembayaran Remunerasi Kinerja di Atas Standar Kepanitian dan Sejenisnya Tahun 2018</title>
+						                <link>http://localhost/website/berita/detail/pembayaran-remunerasi-kinerja-di-atas-standar-kepanitian-dan-sejenisnya-tahun-2018</link>
+						                <description>Pembayaran Remunerasi Kinerja di Atas Standar Kepanitiaan dan Sejenisnya tahun 2018 periode 1 telah dibayarkan pada Senin tanggal 30 April 2018. Rincian perhitungan dapat dilihat pada laman Remunerasi menu Perhitungan.
+</description>
+					                </item><item>
+						                <title>Pembayaran Remunerasi Kinerja di Atas Standar Kepanitian dan Sejenisnya Tahun 2018</title>
+						                <link>http://localhost/website/berita/detail/pembayaran-remunerasi-kinerja-di-atas-standar-kepanitian-dan-sejenisnya-tahun-2018</link>
+						                <description>Pembayaran Remunerasi Kinerja di Atas Standar Kepanitiaan dan Sejenisnya tahun 2018 periode 1 telah dibayarkan pada Senin tanggal 30 April 2018. Rincian perhitungan dapat dilihat pada laman Remunerasi menu Perhitungan. Disolo
+</description>
+					                </item><item>
+						                <title>Pembayaran Remunerasi Kinerja Standar Rumah Sakit UNS Bulan April 2018</title>
+						                <link>http://localhost/website/berita/detail/pembayaran-remunerasi-kinerja-standar-rumah-sakit-uns-bulan-april-2018</link>
+						                <description>Pembayaran Remunerasi Kinerja Standar bagi Tenaga Medis dan Penunjang Medis Rumah Sakit UNS bulan April 2018 dibayarkan pada tanggal 15 Mei 2018 berdasarkan rerata kinerja bulan April 2018.
+</description>
+					                </item><item>
+						                <title>Jadwal Pengisian Logbook Harian Kinerja Mei 2018 Rumah Sakit Universitas Sebelas Maret</title>
+						                <link>http://localhost/website/berita/detail/jadwal-pengisian-logbook-harian-kinerja-mei-2018-rumah-sakit-universitas-sebelas-maret</link>
+						                <description>Berikut Jadwal Pengisian Logbook Harian Rumah Sakit Kinerja Standar Bulan Mei 2018
 </description>
 					                </item><item>
 						                <title>Unggah Karya Ilmiah Scopus 2018</title>
@@ -104,215 +103,6 @@ Panduan tatacara update/melengkapi data Karya Ilmiah :
    Bukti fisik HAKI  tersertifikasi yang diakui adalah sertifikat pengakuan HAKI
    Reviewer yang diakui adalah reviewer yang diundang jurnal lain diluar UNS, sedangkan reviewer di internal UNS diperhitungkan dalam tim penyusun jurnal. Bukti fisik reviewer yang  diakui adalah sertifikat reviewer atau bukti  website editorial system yang mencantumkan judul artikel, nama jurnal, tahun  dan editor)
    Pembicara yang diakui adalah pembicara yang diundang institusi lain diluar UNS, sedangkan pembicara di internal UNS diperhitungkan dalam kepanitiaan (sepanjang memenuhi persyaratan kepanitiaan: pembicara yg diundang oleh eselon 1 lainnya atau pembicara di dalam eselon yg sama namun sasaran utama peserta dari eselon 1 lain). Bukti fisik pembicara yang  diakui adalah  surat tugas  dan sertifikat pembicara (jika tidak mendapat sertifikat pembicara, maka surat tugas tersebut di dalamnya harus ada bukti pelaksanaan berupa tanda tangan dan stempel dari penyelenggara)
-</description>
-					                </item><item>
-						                <title>Pengisian Kinerja di atas Standar Tahun 2014</title>
-						                <link>http://localhost/website/berita/detail/pengisian-kinerja-di-atas-standar-tahun-2014</link>
-						                <description>Jadwal Pengisian Kinerja di atas Standar
-
-  
-    Pengentrian data
-    16 Maret -31 Maret 2015
-  
-  
-    Verifikasi Data
-    1 April - 12 April 2015
-  
-  
-    Revisi dan Finalisasi
-    13 April - 22 April 2015
-  
-
-
-KRITERIA KINERJA DI ATAS STANDAR DIBAGI :
-1. Karya Ilmiah
-2. Kepanitian, Tim Pelaksana, dan Tim Penyusun
-
-
-
-KETENTUAN KEPANITIAAN, TIM PELAKSANA DAN TIM PENYUSUN :
-1. Sasaran utama peserta, berasal dari Eselon I lainnya (Dibuktikan dengan daftar presensi yang menjadi bagian laporan kegiatan)   [berlaku untuk Kepanitiaan]
-2. Jika jumlah panitia melebihi 10% dari jumlah peserta, maka panitia yang diperhitungkan diurutkan berdasarkan nilai kinerja    [berlaku untuk Kepanitiaan]
-3. SK/Surat Tugas ditandatangani oleh Pejabat minimal Eselon II (Rektor/Wakil Rektor/Dekan/Wakil Dekan/Direktur Pascasarjana/Asdir Pascasarjana/Ketua Lembaga/Sekretaris Lembaga/Kepala Biro) dan Ketua SPI    [berlaku untuk Kepanitiaan, Tim Pelaksana dan Tim Penyusun]
-4. TIDAK termasuk kegiatan yang sudah didanai dari Rupiah Murni(RM) UNS.   [berlaku untuk Kepanitiaan, Tim Pelaksana dan Tim Penyusun]
-5. TIDAK termasuk kegiatan dalam bentuk kontrak (seperti penelitian dan pengabdian masyarakat dsb) yang komponen biaya kegiatan(seperti FGD dsb) sudah termasuk dalam nilai kontrak.   [berlaku untuk Kepanitiaan, Tim Pelaksana dan Tim Penyusun]
-6. Kegiatan dapat diperhitungkan dalam kinerja di atas standar setelah ketua mengunggah/upload laporan kegiatan dan melakukan penilaian kinerja.  [berlaku untuk Kepanitiaan, Tim Pelaksana dan Tim Penyusun]
-
-KETENTUAN KARYA ILMIAH :
-1. Daftar pegawai yg dapat dimasukkan adalah pegawai yang sudah terdaftar dalam keanggotaan research group
-2. Karya Ilmiah yang masuk adalah yang sudah terbit(published), bukan pada tahap diterima(accepted)
-3. Verifikasi awal karya ilmiah dilakukan oleh ketua RG, dimana penulis pertama adalah anggota RG ybs, sedangkan penulis berikutnya bisa dari anggota RG lain
-4. Penulis karya ilmiah adalah nama penulis yang menggunakan nama UNS. Penulis pertama karya ilmiah adalah urutan pertama penulis yang menggunakan nama UNS, penulis berikutnya hanya nama penulis yang menggunakan nama UNS.
-5. Karya ilmiah yang mensyaratkan laman website adalah jurnal dan prosiding.
-
-Pengisian Kinerja di atas standar   Tahun 2014 dapat dilakukan dengan penjelasan sbb:
-
-  
-    No
-    Kriteria Kinerja di atas standar
-    Petugas Entri
-  
-  
-    A
-    1. Inisiasi Kegiatan, entri anggota dan Upload SK pengangkatan/Surat Tugas
-    Administrasi Poin Unit
-  
-  
-    2. Upload Laporan Kegiatan dan penilaian Anggota 
-    Ketua Kegiatan
-  
-  
-    B
-    1. Inisiasi Judul dan entri anggota Karya Ilmiah
-    Ketua Riset Group
-  
-  
-    2. Melengkapi data meliputi a. Input Publisher, Tahun terbit dan Upload File  b. Membagi proporsi besaran karya ilmiah (Total jumlah nilai proporsi 100)  Misal Penulis ada 3, dibuat proporsi 50(Penulis Pertama), 30 (penulis kedua) dan 20(penulis ketiga)
-    Ketua/Penulis Pertama Karya Ilmiah
-  
-  
-    3. Melakukan verifikasi atas proporsi karya ilmiah yang sudah diberikan penulis pertama. Jika belum diverifikasi maka isian dianggap belum final dan tidak dapat diperhitungkan dalam di atas standar
-    Anggota Karya Ilmiah
-  
-
-
-  
-    No
-    Jenis 
-    Macam-Macam Kegiatan
-  
-  
-    A
-    Poin diverifikasi oleh Admin Poin
-    
-      
-      
-        Kepanitiaan
-        Simposium
-        
-      
-        Panitia Seminar 
-        
-      
-        Panitia Sosialisasi
-        
-      
-        Panitia Sarasehan
-        
-      
-        Rapat Kerja
-        
-      
-        Workshop
-        
-      
-        Panitia Seleksi Mahasiswa
-        
-      
-        Panitia Seleksi Pegawai
-        
-      
-        Tim Pelaksana Kegiatan
-         
-      
-      
-        Tim Penyusun Jurnal/Buletin/Majalah
-         
-      
-      
-        Tim Penyusun Pedoman/Panduan
-         
-      
-      
-        Reviewer Laporan Keuangan
-         
-      
-      
-        Asesmen
-         
-      
-      
-        Auditor ISO
-         
-      
-      
-        Pelatihan Instruktur
-         
-      
-      
-        Auditor SPI
-         
-      
-      
-        Pengembang Perangkat Lunak
-         
-      
-      
-        Sidang Komisi
-         
-      
-      
-        Sidang Pleno
-         
-      
- 
-        Sidang Senat Terbuka
-         
-      
-      
-        Instruktur Pelatihan Bahasa
-         
-      
-    
-  
-  
-    B
-    Poin diverifikasi oleh Ketua RG
-    
-      
-      
-        Buku Teks
-      
-      
-         HKI /Paten
-      
-      
-        Jurnal Non Scopus
-      
-      
-        Penulis Koran
-      
-      
-        Prosiding
-      
-      
-        Pembicara/Keynote
-      
-    
-  
-
-
-
-Untuk video demo dan informasi lebih detail dapat diklik tombol selengkapnya. 
-</description>
-					                </item><item>
-						                <title>Unggah Karya Ilmiah Scopus 2017</title>
-						                <link>http://localhost/website/berita/detail/unggah-karya-ilmiah-scopus-2017</link>
-						                <description>Bagi Bapak/Ibu Dosen yang memiliki publikasi karya ilmiah Scopus dapat menggunggah karya ilmiah di laman iris1103.uns.ac.id dan klik menu kinerja di atas standar sub menu jurnal terindeks scopus/ prosiding terindeks scopus dengan menambahkan pada form tambah jurnal/ prosiding scopus. Karya ilmiah yang diunggah adalah karya ilmiah yang berhasil dipublikasikan di Scopus sampai dengan 31 Juli 2017. Unggah karya ilmiah Scopus dapat dilakukan paling lambat tanggal 4 Agustus 2017 pukul 23.59 WIB. Data yang ada di IRIS sebagai dasar pembayaran Insentif kinerja di atas standar karya ilmiah Scopus periode Agustus 2017.
-
-
- 
-
- 
-</description>
-					                </item><item>
-						                <title>Pemberian Stimulan/Insentif Publikasi Karya Ilmiah bagi Tenaga Pendidik dan Tenaga Kependidikan UNS</title>
-						                <link>http://localhost/website/berita/detail/pemberian-stimulaninsentif-publikasi-karya-ilmiah-bagi-tenaga-pendidik-dan-tenaga-kependidikan-uns</link>
-						                <description>Berikut SK Rektor No : 509/UN27/PP/2014 tentang "Pemberian Stimulan/Insentif Publikasi Karya Ilmiah bagi Tenaga Pendidik dan Tenaga Kependidikan UNS" di download pada link </description>
-					                </item><item>
-						                <title>Unggah Karya Ilmiah Scopus 2018</title>
-						                <link>http://localhost/website/berita/detail/unggah-karya-ilmiah-scopus-2018</link>
-						                <description>Bagi Bapak/Ibu Dosen yang memiliki publikasi karya ilmiah Scopus dapat menggunggah karya ilmiah
 </description>
 					                </item></channel>
   	</rss>

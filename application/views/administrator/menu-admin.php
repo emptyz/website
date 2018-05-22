@@ -6,7 +6,7 @@
               <img src="<?php echo $this->session->foto; ?>" class="img-circle" alt="User Image">
             </div>
             <div class="pull-left info">
-              <p><?php echo $this->session->nama; ?></p>
+                <p><a href="<?php echo base_url(); ?>administrator/profil"><?php echo $this->session->nama; ?></a></p>
               <a href="<?php echo base_url(); ?>administrator/profil"><i class="fa fa-circle text-success"></i> Profile</a>
             </div>
           </div>

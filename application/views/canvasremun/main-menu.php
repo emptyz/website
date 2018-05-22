@@ -21,85 +21,137 @@
 
                 <ul>
                     <?php
-                    $botm = $this->model_utama->mainmenu();
-                    foreach ($botm->result_array() as $row) {
-                        $dropdown = $this->model_utama->submenu($row['id_main'])->num_rows();
-                        if ($dropdown == 0) {
-                            echo "<li><a href='" . base_url() . "$row[link]'> $row[nama_menu]</a></li>";
-                        } else {
-                            echo "
-                          <li>
+                    if ($this->session->islogin) {
+                        echo "  <li><a href='http://remunerasi.uns.ac.id/35' target='_blank'>Pegawai</i></a>
+                                <li><a href='http://remunerasi.uns.ac.id/63' target='_blank'>Kinerja </i></a></li>
+                                <li><a href='http://remunerasi.uns.ac.id/65' target='_blank'>Perhitungan </i></a></li>
+                                <li><a href='http://remunerasi.uns.ac.id/64' target='_blank'>Nilai Perilaku </i></a></li>
+                                <li><a href='http://remunerasi.uns.ac.id/100' target='_blank'>Survei </i></a></li>
+                                <li><a href='#' target='_blank'>Portal</i></a>
+                                <ul>";
+                        $botm = $this->model_utama->mainmenu();
+                        foreach ($botm->result_array() as $row) {
+                            $dropdown = $this->model_utama->submenu($row['id_main'])->num_rows();
+                            if ($dropdown == 0) {
+                                echo "<li><a href='" . base_url() . "$row[link]'> $row[nama_menu]</a></li>";
+                            } else {
+                                echo "
+                            <li>
                             <a href='" . base_url() . "$row[link]'> $row[nama_menu] 
                             <span class='caret'></span></a>
                             <ul>";
-                            $dropmenu = $this->model_utama->submenu($row['id_main']);
-                            foreach ($dropmenu->result_array() as $row) {
-                                $dropdown1 = $this->model_utama->submenu1($row['id_sub'])->num_rows();
-                                if ($dropdown1 == 0) {
-                                    if (preg_match("/^http/", $row['link_sub'])) {
-                                        echo "<li><a href='$row[link_sub]'>$row[nama_sub]</a></li>";
+                                $dropmenu = $this->model_utama->submenu($row['id_main']);
+                                foreach ($dropmenu->result_array() as $row) {
+                                    $dropdown1 = $this->model_utama->submenu1($row['id_sub'])->num_rows();
+                                    if ($dropdown1 == 0) {
+                                        if (preg_match("/^http/", $row['link_sub'])) {
+                                            echo "<li><a href='$row[link_sub]'>$row[nama_sub]</a></li>";
+                                        } else {
+                                            echo "<li><a href='" . base_url() . "$row[link_sub]'>$row[nama_sub]</a></li>";
+                                        }
                                     } else {
-                                        echo "<li><a href='" . base_url() . "$row[link_sub]'>$row[nama_sub]</a></li>";
-                                    }
-                                } else {
-                                    echo "<li>
+                                        echo "<li>
                                           <a href='" . base_url() . "$row[link_sub]'> $row[nama_sub] </a>
                                           <ul>";
-                                    $dropmenu1 = $this->model_utama->submenu1($row['id_sub']);
-                                    foreach ($dropmenu1->result_array() as $row) {
-                                        $dropdown2 = $this->model_utama->submenu1($row['id_sub'])->num_rows();
-                                        if ($dropdown2 == 0) {
-                                            if (preg_match("/^http/", $row['link_sub'])) {
-                                                echo "<li><a tabindex='-1' href='$row[link_sub]'>$row[nama_sub]</a></li>";
-                                            } else {
-                                                echo "<li><a tabindex='-1' href='" . base_url() . "$row[link_sub]'>$row[nama_sub]</a></li>";
-                                            }
-                                        } else {
-                                            echo "<li class='dropdown-submenu'>
-                                                          <a href='" . base_url() . "$row[link_sub]'> $row[nama_sub] </a>
-                                                          <ul class='dropdown-menu'>";
-                                            $dropmenu2 = $this->model_utama->submenu1($row['id_sub']);
-                                            foreach ($dropmenu2->result_array() as $row) {
+                                        $dropmenu1 = $this->model_utama->submenu1($row['id_sub']);
+                                        foreach ($dropmenu1->result_array() as $row) {
+                                            $dropdown2 = $this->model_utama->submenu1($row['id_sub'])->num_rows();
+                                            if ($dropdown2 == 0) {
                                                 if (preg_match("/^http/", $row['link_sub'])) {
                                                     echo "<li><a tabindex='-1' href='$row[link_sub]'>$row[nama_sub]</a></li>";
                                                 } else {
                                                     echo "<li><a tabindex='-1' href='" . base_url() . "$row[link_sub]'>$row[nama_sub]</a></li>";
                                                 }
+                                            } else {
+                                                echo "<li class='dropdown-submenu'>
+                                                          <a href='" . base_url() . "$row[link_sub]'> $row[nama_sub] </a>
+                                                          <ul class='dropdown-menu'>";
+                                                $dropmenu2 = $this->model_utama->submenu1($row['id_sub']);
+                                                foreach ($dropmenu2->result_array() as $row) {
+                                                    if (preg_match("/^http/", $row['link_sub'])) {
+                                                        echo "<li><a tabindex='-1' href='$row[link_sub]'>$row[nama_sub]</a></li>";
+                                                    } else {
+                                                        echo "<li><a tabindex='-1' href='" . base_url() . "$row[link_sub]'>$row[nama_sub]</a></li>";
+                                                    }
+                                                }
+                                                echo "</ul></li>";
                                             }
-                                            echo "</ul></li>";
                                         }
+                                        echo "</ul></li>";
                                     }
-                                    echo "</ul></li>";
                                 }
-                            }
-                            echo "</ul>
+                                echo "</ul>
                           </li>";
+                            }
                         }
-                    }
-                    ?>
-                    <?php
-                    if ($this->session->islogin) {
-                                                                      echo "<li><a href='#'>Remunerasi</a>
-                                <ul>
-                                <li><a href='http://remunerasi.uns.ac.id' target='_blank'>Kinerja </i></a></li>
-                                <li><a href='http://remunerasi.uns.ac.id' target='_blank'>Penilaian </i></a></li>
-                                <li><a href='http://remunerasi.uns.ac.id' target='_blank'>Perhitungan </i></a></li>
-                                <li><a href='http://remunerasi.uns.ac.id' target='_blank'>Nilai Perilaku </i></a></li>
-                                <li><a href='http://remunerasi.uns.ac.id' target='_blank'>Survei </i></a></li>
-                               
+                        $admin = ($this->session->level != "");
+                        if ($admin){
+                            echo "<li><a href='" . base_url() . "administrator'>Admin Panel</li>";
+                        }
+
+                        echo "<li><a href='" . base_url() . "administrator/logout'>Logout <i class='icon-arrow-right2'></i></a></li>
                                 </ul>
                               </li>";
-                        echo "<li><a href='#'>Profile</i></a>
-                                <ul>
-                                <li><a href='".base_url()."administrator/profil' target='_blank'>" . $this->session->userdata('nama') . "</a></li>
-                                <li><a href='".base_url()."administrator/logout'>Logout <i class='icon-arrow-right2'></i></a></li>
-                                </ul>
-                              </li>";
-  
                     } else {
-                        echo "<li><a href='#modal-login-form' data-lightbox='inline' class='header-login-trigger'>LOGIN<i class='icon-line2-login'></i></a></li>";
+                        $botm = $this->model_utama->mainmenu();
+                        foreach ($botm->result_array() as $row) {
+                            $dropdown = $this->model_utama->submenu($row['id_main'])->num_rows();
+                            if ($dropdown == 0) {
+                                echo "<li><a href='" . base_url() . "$row[link]'> $row[nama_menu]</a></li>";
+                            } else {
+                                echo "
+                          <li>
+                            <a href='" . base_url() . "$row[link]'> $row[nama_menu] 
+                            <span class='caret'></span></a>
+                            <ul>";
+                                $dropmenu = $this->model_utama->submenu($row['id_main']);
+                                foreach ($dropmenu->result_array() as $row) {
+                                    $dropdown1 = $this->model_utama->submenu1($row['id_sub'])->num_rows();
+                                    if ($dropdown1 == 0) {
+                                        if (preg_match("/^http/", $row['link_sub'])) {
+                                            echo "<li><a href='$row[link_sub]'>$row[nama_sub]</a></li>";
+                                        } else {
+                                            echo "<li><a href='" . base_url() . "$row[link_sub]'>$row[nama_sub]</a></li>";
+                                        }
+                                    } else {
+                                        echo "<li>
+                                          <a href='" . base_url() . "$row[link_sub]'> $row[nama_sub] </a>
+                                          <ul>";
+                                        $dropmenu1 = $this->model_utama->submenu1($row['id_sub']);
+                                        foreach ($dropmenu1->result_array() as $row) {
+                                            $dropdown2 = $this->model_utama->submenu1($row['id_sub'])->num_rows();
+                                            if ($dropdown2 == 0) {
+                                                if (preg_match("/^http/", $row['link_sub'])) {
+                                                    echo "<li><a tabindex='-1' href='$row[link_sub]'>$row[nama_sub]</a></li>";
+                                                } else {
+                                                    echo "<li><a tabindex='-1' href='" . base_url() . "$row[link_sub]'>$row[nama_sub]</a></li>";
+                                                }
+                                            } else {
+                                                echo "<li class='dropdown-submenu'>
+                                                          <a href='" . base_url() . "$row[link_sub]'> $row[nama_sub] </a>
+                                                          <ul class='dropdown-menu'>";
+                                                $dropmenu2 = $this->model_utama->submenu1($row['id_sub']);
+                                                foreach ($dropmenu2->result_array() as $row) {
+                                                    if (preg_match("/^http/", $row['link_sub'])) {
+                                                        echo "<li><a tabindex='-1' href='$row[link_sub]'>$row[nama_sub]</a></li>";
+                                                    } else {
+                                                        echo "<li><a tabindex='-1' href='" . base_url() . "$row[link_sub]'>$row[nama_sub]</a></li>";
+                                                    }
+                                                }
+                                                echo "</ul></li>";
+                                            }
+                                        }
+                                        echo "</ul></li>";
+                                    }
+                                }
+                                echo "</ul>
+                          </li>";
+                            }
+                        }
+                        echo "<li><a href='#modal-login-form' data-lightbox='inline' class='header-login-trigger'>Login Remunerasi <i class='icon-line2-login'></i></a></li";
                     }
                     ?>
+
                 </ul>
 
 
@@ -107,7 +159,7 @@
                 ============================================= -->
                 <div id="top-search">
                     <a href="#" id="top-search-trigger"><i class="icon-search3"></i><i class="icon-line-cross"></i></a>
-                    <form action="<?php echo base_url().'berita/cari'; ?>" method="post">
+                    <form action="<?php echo base_url() . 'berita/cari'; ?>" method="post">
                         <input type="text" name="cari" class="form-control" value="" placeholder="Masukkan kata kunci &amp; Tekan Enter..">
                     </form>
                 </div><!-- #top-search end -->
@@ -143,6 +195,11 @@
                             <p class="nobottommargin tright"><small class="t300"><em><a href="#">Forgot Password?</a></em></small></p>
                         </div>
                     </div>
+                </div>
+                <div class="center">
+                    <hr>
+                    <h4 style="margin-bottom: 15px;">Atau login dengan:</h4>
+                    <a href="#" class="button button-rounded si-facebook si-colored">SSO UNS</a>
                 </div>
             </form>
         </div>

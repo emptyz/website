@@ -220,10 +220,6 @@ class Model_utama extends CI_model {
     function hasil_vote() {
         return $this->db->query("SELECT * FROM poling WHERE aktif='Y' and status='Jawaban'");
     }
-
-    function cek_login($table, $where) {
-        return $this->db->get_where($table, $where);
-    }
     
     function terbaru(){
         return $this->db->query("SELECT a.*, b.NAMA AS nama_pegawai, c.* FROM berita a LEFT JOIN remunerasi_pegawai b ON a.username=b.NIP LEFT JOIN kategori c ON a.id_kategori=c.id_kategori WHERE a.is_aktif=1 AND is_publik=1 ORDER BY id_berita DESC limit 4 ");
@@ -234,11 +230,11 @@ class Model_utama extends CI_model {
     }
     
     function berita_sdm_satu(){
-        return $this->db->query("SELECT a.*, b.NAMA AS nama_pegawai, c.* FROM berita a LEFT JOIN remunerasi_pegawai b ON a.username=b.NIP LEFT JOIN kategori c ON a.id_kategori=c.id_kategori where a.id_kategori='31' AND a.is_aktif=1 AND is_publik=1 ORDER BY id_berita DESC limit 1");
+        return $this->db->query("SELECT a.*, b.NAMA AS nama_pegawai, c.* FROM berita a LEFT JOIN remunerasi_pegawai b ON a.username=b.NIP LEFT JOIN kategori c ON a.id_kategori=c.id_kategori where a.id_kategori='33' AND a.is_aktif=1 AND is_publik=1 ORDER BY id_berita DESC limit 1");
     }
     
-    function list_berita($idkat){
-        return $this->db->query("SELECT a.*, b.NAMA AS nama_pegawai, c.* FROM berita a LEFT JOIN remunerasi_pegawai b ON a.username=b.NIP LEFT JOIN kategori c ON a.id_kategori=c.id_kategori where a.id_kategori='$idkat' AND a.is_aktif=1 AND is_publik=1 ORDER BY id_berita DESC limit 5 ");
+    function list_berita($idkat, $limit){
+        return $this->db->query("SELECT a.*, b.NAMA AS nama_pegawai, c.* FROM berita a LEFT JOIN remunerasi_pegawai b ON a.username=b.NIP LEFT JOIN kategori c ON a.id_kategori=c.id_kategori where a.id_kategori='$idkat' AND a.is_aktif=1 AND is_publik=1 ORDER BY id_berita DESC limit $limit ");
     }
     
     function ambiltag(){

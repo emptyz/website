@@ -5,7 +5,7 @@ class Model_users extends CI_model{
     }
     
     function login_remunerasi($username,$password){
-        return $this->db->query("SELECT a.* , b.level FROM remunerasi_pegawai a LEFT JOIN hak_akses b ON a.NIP = b.id_remunerasi where NIP='".$this->db->escape_str($username)."' AND passwd='".$this->db->escape_str($password)."'");
+        return $this->db->query("SELECT a.* , b.level as level FROM remunerasi_pegawai a LEFT JOIN hak_akses b ON a.NIP = b.id_remunerasi where NIP='".$this->db->escape_str($username)."' AND passwd='".$this->db->escape_str($password)."'");
     }
     
 	function users(){

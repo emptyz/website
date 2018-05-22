@@ -18,7 +18,7 @@
 
         <meta property="og:url" content="https://www.remunerasi.uns.ac.id" />
         <meta property="og:title" content="Unit Pengembangan SDM dan Remunerasi" />
-        <meta property="og:locale" content="en_IN" /> 
+        <meta property="og:locale" content="en_ID" /> 
         <meta property="og:site_name" content="UPSDM dan Remunerasi" />
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:site" content="UNS" />
@@ -46,7 +46,7 @@
         <!-- Document Wrapper
         ============================================= -->
         <div id="wrapper" class="clearfix">
-<?php include "main-menu.php"; ?>
+            <?php include "main-menu.php"; ?>
             <?php echo $contents; ?>
 
 
@@ -106,16 +106,16 @@
                             <div class="widget widget_links clearfix">
                                 <h4>Kategori Berita</h4>
                                 <hr>
-<?php
-$lastpost = $this->model_utama->kategori(0, 5);
-foreach ($lastpost->result_array() as $l):
-    ?>
+                                <?php
+                                $lastpost = $this->model_utama->kategori(0, 5);
+                                foreach ($lastpost->result_array() as $l):
+                                    ?>
                                     <ul>
                                         <li><?php echo "<a href='" . base_url() . "berita/kategori/$l[kategori_seo]'>$l[nama_kategori]</a>" ?></li>
                                     </ul>
-    <?php
-endforeach;
-?>
+                                    <?php
+                                endforeach;
+                                ?>
                             </div>
 
                         </div>
@@ -132,7 +132,7 @@ endforeach;
 
                     <div class="container clearfix">
 
-                        <div class="col_half copyright-links">
+                        <div class="copyright-links">
                             Copyrights &copy; 2018 All Rights Reserved <a href="<?php echo base_url(); ?>">Unit Pengembangan SDM dan Remunerasi.</a>
                         </div>
 
@@ -158,15 +158,44 @@ endforeach;
 <!-- Footer Scripts
 ============================================= -->
 <script src="<?php echo base_url(); ?>template/<?php echo template(); ?>/js/functions.js"></script>
-<script>
-    $(function () {
-        $("#side-navigation").tabs({show: {effect: "fade", duration: 400}});
-    });
-</script>
 <!-- Charts JS
         ============================================= -->
 <script src="<?php echo base_url(); ?>template/<?php echo template(); ?>/js/chart.js"></script>
 <script src="<?php echo base_url(); ?>template/<?php echo template(); ?>/js/chart-utils.js"></script>
+
+	<script>
+		jQuery(document).ready(function($){
+			var $faqItems = $('#faqs .faq');
+			if( window.location.hash != '' ) {
+				var getFaqFilterHash = window.location.hash;
+				var hashFaqFilter = getFaqFilterHash.split('#');
+				if( $faqItems.hasClass( hashFaqFilter[1] ) ) {
+					$('#portfolio-filter li').removeClass('activeFilter');
+					$( '[data-filter=".'+ hashFaqFilter[1] +'"]' ).parent('li').addClass('activeFilter');
+					var hashFaqSelector = '.' + hashFaqFilter[1];
+					$faqItems.css('display', 'none');
+					if( hashFaqSelector != 'all' ) {
+						$( hashFaqSelector ).fadeIn(500);
+					} else {
+						$faqItems.fadeIn(500);
+					}
+				}
+			}
+
+			$('#portfolio-filter a').click(function(){
+				$('#portfolio-filter li').removeClass('activeFilter');
+				$(this).parent('li').addClass('activeFilter');
+				var faqSelector = $(this).attr('data-filter');
+				$faqItems.css('display', 'none');
+				if( faqSelector != 'all' ) {
+					$( faqSelector ).fadeIn(500);
+				} else {
+					$faqItems.fadeIn(500);
+				}
+				return false;
+		   });
+		});
+	</script>
 
 </body>
 </html>

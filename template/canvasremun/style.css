@@ -243,7 +243,7 @@ small { font-family: 'Lato', sans-serif; }
 
 .lowercase { text-transform: lowercase !important; }
 
-.capitalize { text-transform: capitalize !important; }
+.uppercase { text-transform: uppercase !important; }
 
 .nott { text-transform: none !important; }
 
@@ -696,7 +696,7 @@ body.stretched .container-fullwidth {
 .flexslider {position: relative;margin: 0; padding: 0;}
 .flexslider .slider-wrap > .slide {display: none; -webkit-backface-visibility: hidden;}
 .flexslider .slider-wrap img {width: 100%; display: block;}
-.flex-pauseplay span {text-transform: capitalize;}
+.flex-pauseplay span {text-transform: uppercase;}
 
 .slider-wrap:after {content: "."; display: block; clear: both; visibility: hidden; line-height: 0; height: 0;}
 html[xmlns] .slider-wrap {display: block;}
@@ -1162,7 +1162,7 @@ body.stretched #header.full-header .container {
 	font-weight: bold;
 	font-size: 13px;
 	letter-spacing: 1px;
-	text-transform: uppercase;
+	text-transform: capitalize;
 	font-family: 'Raleway', sans-serif;
 	-webkit-transition: margin .4s ease, padding .4s ease;
 	-o-transition: margin .4s ease, padding .4s ease;
@@ -1526,7 +1526,7 @@ body:not(.device-md):not(.device-sm):not(.device-xs) #primary-menu.style-2.cente
 	font-size: 11px;
 	font-weight: 400;
 	color: #888;
-	text-transform: capitalize;
+	text-transform: uppercase;
 }
 
 #primary-menu.sub-title > ul > li:hover > a,
@@ -6439,7 +6439,7 @@ td.actions {
 	width: 25%;
 	border-left: 1px dotted #BBB;
 	color: #888;
-	text-transform: capitalize;
+	text-transform: uppercase;
 }
 
 .countdown-section:first-child { border-left: 0; }
@@ -6565,7 +6565,7 @@ body:not(.device-touch) .button {
 	transition: all .2s ease-in-out;
 }
 
-.button-dark { background-color: #444; }
+.button-dark { background-color: #1d68ba; }
 
 .button-light {
 	background-color: #EEE;
@@ -6579,7 +6579,7 @@ body:not(.device-touch) .button {
 	text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
 }
 
-.button.button-dark:hover { background-color: #1d68ba; }
+.button.button-dark:hover { background-color: #444; }
 
 .button.button-mini {
 	padding: 0 14px;
@@ -7221,7 +7221,7 @@ body:not(.device-touch) .button.button-full strong {
 .promo a.button.button-desc { margin-top: -40px; }
 
 
-/* Promo Uppercase
+/* Promo uppercase
 -----------------------------------------------------------------*/
 
 .promo-uppercase { text-transform: uppercase; }
@@ -10663,8 +10663,8 @@ blockquote.float-right {
 	height: 36px;
 	line-height: 32px;
 	border: 1px solid rgba(0,0,0,0.2);
-	color: #666;
-	background-color: #FFF;
+	color: #FFF;
+	background-color: #1d68ba;
 	font-size: 18px;
 	border-radius: 50%;
 	opacity: 0;
@@ -10713,7 +10713,7 @@ blockquote.float-right {
 }
 
 .owl-carousel .owl-nav [class*=owl-]:hover {
-	background-color: #1d68ba !important;
+	background-color: #444 !important;
 	color: #FFF !important;
 	text-decoration: none;
 }

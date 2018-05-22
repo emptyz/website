@@ -30,7 +30,7 @@
             <ul class="nav navbar-nav">
               <li class="dropdown messages-menu">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                  <i class="fa fa-envelope-o"></i> Pesan Masuk
+                  <i class="fa fa-envelope-o"></i> Pesan Baru
                   <span class="label label-success"><?php echo $this->model_hubungi->hitung_pesan_masuk()->num_rows(); ?></span>
                 </a>
                 <ul class="dropdown-menu">

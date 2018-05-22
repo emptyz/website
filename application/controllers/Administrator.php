@@ -25,23 +25,21 @@ class Administrator extends CI_Controller {
             if ($this->session->level != '') {
                 redirect('administrator/home');
             } else {
-                $data['title'] = 'Administrator &rsaquo; Log In';
-                $this->load->view('administrator/view_login', $data);
+                redirect(base_url());
             }
         }
     }
 
     function home() {
-        if ($this->session->level == 'admin'){
-                    cek_session_admin();
-        $this->template->load('administrator/template', 'administrator/view_home');
-        } elseif ($this->session->level == 'operator'){
+        if ($this->session->level == 'admin') {
+            cek_session_admin();
+            $this->template->load('administrator/template', 'administrator/view_home');
+        } elseif ($this->session->level == 'operator') {
             cek_session_opadmin();
-        $this->template->load('administrator/template', 'administrator/view_operator');
+            $this->template->load('administrator/template', 'administrator/view_operator');
         } else {
             redirect(base_url());
         }
-
     }
 
     function identitaswebsite() {
@@ -176,7 +174,7 @@ class Administrator extends CI_Controller {
     }
 
     function tambah_halamanbaru() {
-       cek_session_opadmin();
+        cek_session_opadmin();
         if (isset($_POST['submit'])) {
             $this->model_halaman->halamanstatis_tambah();
             redirect('administrator/halamanbaru');
@@ -252,11 +250,20 @@ class Administrator extends CI_Controller {
         }
     }
 
-    function delete_berita() {
+    function delete_berita($gambar) {
         cek_session_opadmin();
         $id = $this->uri->segment(3);
-        $this->model_berita->list_berita_delete($id);
+        $this->model_berita->list_berita_delete($id, $gambar);
         redirect('administrator/berita');
+    }
+
+    function delete_gambar_berita() {
+        $id = $this->uri->segment(3);
+        $hapus = $this->model_berita->gambar_berita_delete($id);
+        if ($hapus) {
+            $this->session->set_flashdata('sukses', 'Berhasil menghapus gambar.');
+            redirect('administrator/edit_berita/'.$id);
+        }
     }
 
     // Controller Modul Komentar Berita
@@ -377,7 +384,7 @@ class Administrator extends CI_Controller {
     }
 
     function edit_tagberita() {
-       cek_session_opadmin();
+        cek_session_opadmin();
         $id = $this->uri->segment(3);
         if (isset($_POST['submit'])) {
             $this->model_berita->tag_berita_update();
@@ -596,7 +603,7 @@ class Administrator extends CI_Controller {
             $this->model_modul->modul_tambah();
             redirect('administrator/manajemenmodul');
         } else {
-             $data['rows'] = $this->model_modul->last_urutan()->row_array();
+            $data['rows'] = $this->model_modul->last_urutan()->row_array();
             $this->template->load('administrator/template', 'administrator/mod_modul/view_modul_tambah', $data);
         }
     }
