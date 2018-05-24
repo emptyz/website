@@ -19,7 +19,7 @@ class Model_agenda extends CI_model{
                         'tgl_selesai'=>$selesai,
                         'tgl_posting'=>date('Y-m-d'),
                         'jam'=>$this->db->escape_str($this->input->post('e')),
-                        'username'=>$this->session->username);
+                        'username'=>$this->session->nama);
         $this->db->insert('agenda',$datadb);
     }
 

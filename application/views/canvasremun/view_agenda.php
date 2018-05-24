@@ -97,51 +97,44 @@
 
                         <div class="widget clearfix">
 
-                            <h4>Upcoming Events</h4>
+                            <h4>Agenda Terbaru</h4>
                             <div id="post-list-footer">
-
+                                <?php
+                                $agenda_sidebar = $this->model_utama->agenda_hari_ini(5);
+                                foreach ($agenda_sidebar->result_array() as $row) {
+                                $isi_berita = strip_tags($row['isi_agenda']);
+                                ?>
                                 <div class="spost clearfix">
-                                    <div class="entry-image">
-                                        <a href="#" class="nobg"><img src="images/events/thumbs/1.jpg" alt=""></a>
-                                    </div>
                                     <div class="entry-c">
                                         <div class="entry-title">
-                                            <h4><a href="#">Lorem ipsum dolor sit amet, consectetur</a></h4>
+                                            <h4><?php echo "<a href= '" . base_url() . "agenda/detail/$row[tema_seo]'><b>$row[tema]</b></a>"; ?></h4>
                                         </div>
                                         <ul class="entry-meta">
-                                            <li>10th July 2014</li>
+                                            <?php
+                                            $current = strtotime(date("Y-m-d"));
+                                            $date = strtotime($row['tgl_mulai']);
+
+                                            $datediff = $date - $current;
+                                            $difference = floor($datediff / (60 * 60 * 24));
+                                            if ($difference == 0) {
+                                                echo '<li><span class="badge badge-success">Hari Ini</span></li>';
+                                            } else if ($difference > 1) {
+                                                echo '<li><span class="badge badge-info">Akan datang</span></li>';
+                                            } else if ($difference > 0) {
+                                                echo '<li><span class="badge badge-warning">Besok</span></li>';
+                                            } else if ($difference < -1) {
+                                                echo '<li><span class="badge badge-danger">Telah Berlalu</span></li>';
+                                            } else {
+                                                echo '<li><span class="badge badge-danger">Kemarin</span></li>';
+                                            }
+                                            ?>
+                                            <li><i class="icon-time"></i><?php echo $row['jam']; ?></li>
                                         </ul>
                                     </div>
                                 </div>
-
-                                <div class="spost clearfix">
-                                    <div class="entry-image">
-                                        <a href="#" class="nobg"><img src="images/events/thumbs/2.jpg" alt=""></a>
-                                    </div>
-                                    <div class="entry-c">
-                                        <div class="entry-title">
-                                            <h4><a href="#">Elit Assumenda vel amet dolorum quasi</a></h4>
-                                        </div>
-                                        <ul class="entry-meta">
-                                            <li>10th July 2014</li>
-                                        </ul>
-                                    </div>
-                                </div>
-
-                                <div class="spost clearfix">
-                                    <div class="entry-image">
-                                        <a href="#" class="nobg"><img src="images/events/thumbs/3.jpg" alt=""></a>
-                                    </div>
-                                    <div class="entry-c">
-                                        <div class="entry-title">
-                                            <h4><a href="#">Debitis nihil placeat, illum est nisi</a></h4>
-                                        </div>
-                                        <ul class="entry-meta">
-                                            <li>10th July 2014</li>
-                                        </ul>
-                                    </div>
-                                </div>
-
+                                <?php
+                                }
+                                ?>
                             </div>
 
                         </div>

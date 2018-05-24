@@ -22,7 +22,7 @@ class Administrator extends CI_Controller {
                 $this->load->view('administrator/view_login', $data);
             }
         } else {
-            if ($this->session->level != '') {
+            if ($this->session->islogin && ($this->session->level != '')) {
                 redirect('administrator/home');
             } else {
                 redirect(base_url());

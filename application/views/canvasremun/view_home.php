@@ -535,7 +535,7 @@
 
                         <div id="posts" class="events">
                             <?php
-                            $agenda = $this->model_utama->agenda(0, 1);
+                            $agenda = $this->model_utama->agenda_hari_ini(1);
                             foreach ($agenda->result_array() as $record) {
                                 $isi_berita = strip_tags($record['isi_agenda']);
                                 ?>
@@ -569,7 +569,7 @@
                                         </ul>
                                     </div>
                                 </div>
-                                <?php echo "<a href='" . base_url() . "berita/kategori/remunerasi' class='button button-rounded button-reveal button-large button-dark tright float-right'><i class='icon-line-arrow-right'></i><span>Semua Agenda</span></a>" ?>
+                                <?php echo "<a href='" . base_url() . "agenda' class='button button-rounded button-reveal button-large button-dark tright float-right'><i class='icon-line-arrow-right'></i><span>Semua Agenda</span></a>" ?>
                                 <?php
                             }
                             ?>

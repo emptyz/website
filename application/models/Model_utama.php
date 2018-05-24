@@ -157,7 +157,11 @@ class Model_utama extends CI_model {
     }
 
     function agenda($start, $limit) {
-        return $this->db->query("SELECT a.*, b.NAMA as nama_pegawai FROM agenda a JOIN remunerasi_pegawai b ON a.username=b.NIP ORDER BY a.id_agenda DESC LIMIT $start, $limit");
+        return $this->db->query("SELECT * FROM agenda ORDER BY id_agenda DESC LIMIT $start, $limit");
+    }
+    
+      function agenda_hari_ini($limit) {
+        return $this->db->query("SELECT * FROM agenda WHERE DATE_FORMAT(tgl_mulai, '%Y-%m-%d')=CURDATE() OR DATE_FORMAT(tgl_mulai, '%Y-%m-%d') > CURDATE() ORDER BY DATE(tgl_mulai) ASC LIMIT $limit");
     }
 
     function hitungagenda() {
@@ -165,7 +169,7 @@ class Model_utama extends CI_model {
     }
 
     function agenda_detail($id) {
-        return $this->db->query("SELECT a.*, b.NAMA as nama_lengkap FROM agenda a JOIN remunerasi_pegawai b ON a.username=b.NIP where a.tema_seo='" . $this->db->escape_str($id) . "'");
+        return $this->db->query("SELECT * FROM agenda where tema_seo='" . $this->db->escape_str($id) . "'");
     }
 
     function index($start, $limit) {
