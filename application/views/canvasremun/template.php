@@ -59,8 +59,8 @@
 
                 <div class="container">
 
-                    <!-- Footer Widgets
-                    ============================================= -->
+<!--                     Footer Widgets
+                    ============================================= 
                     <div class="footer-widgets-wrap clearfix">
 
 
@@ -70,7 +70,7 @@
 
                                 <h4>Kontak Kami</h4>
                                 <hr>
-                                <div style="background: url('<?php echo base_url(); ?>template/<?php echo template(); ?>/images/world-map.png') no-repeat center center; background-size: 100%;">
+                                <div style="background: url('<?php// echo base_url(); ?>template/<?php //echo template(); ?>/images/world-map.png') no-repeat center center; background-size: 100%;">
                                     <address>
                                         <strong>Gedung BAA-APSI Lt. 2</strong><br>
                                         Universitas Sebelas Maret<br>
@@ -107,14 +107,14 @@
                                 <h4>Kategori Berita</h4>
                                 <hr>
                                 <?php
-                                $lastpost = $this->model_utama->kategori(0, 5);
-                                foreach ($lastpost->result_array() as $l):
+                                //$lastpost = $this->model_utama->kategori(0, 5);
+                               // foreach ($lastpost->result_array() as $l):
                                     ?>
                                     <ul>
-                                        <li><?php echo "<a href='" . base_url() . "berita/kategori/$l[kategori_seo]'>$l[nama_kategori]</a>" ?></li>
+                                        <li><?php //echo "<a href='" . base_url() . "berita/kategori/$l[kategori_seo]'>$l[nama_kategori]</a>" ?></li>
                                     </ul>
                                     <?php
-                                endforeach;
+                               // endforeach;
                                 ?>
                             </div>
 
@@ -122,7 +122,7 @@
 
 
 
-                    </div><!-- .footer-widgets-wrap end -->
+                    </div> .footer-widgets-wrap end -->
 
                 </div>
 

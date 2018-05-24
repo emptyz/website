@@ -34,7 +34,7 @@
                         if ($row['id_kategori'] == '0') {
                             $kategori = '<i style="color:red">Pending</i>';
                         } else {
-                            $kategori = $row['nama_kategori'];
+                            $kategori = $row['id_kategori'];
                         }
 
                         if ($row['is_aktif'] == "1") {

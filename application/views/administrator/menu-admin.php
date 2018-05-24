@@ -10,6 +10,16 @@
               <a href="<?php echo base_url(); ?>administrator/profil"><i class="fa fa-circle text-success"></i> Profile</a>
             </div>
           </div>
+          
+          <?php
+function active($currect_page){
+  $url_array =  explode('/', $_SERVER['REQUEST_URI']) ;
+  $url = end($url_array);  
+  if($currect_page == $url){
+      echo 'active'; //class name in css 
+  } 
+}
+?>
 
           <!-- sidebar menu: : style can be found in sidebar.less -->
           <ul class="sidebar-menu">
@@ -20,7 +30,7 @@
                     $main = $this->model_menu->mainmenu_admin();
                     foreach ($main->result_array() as $row) {
                       if ($this->model_menu->submenu_admin($row['id_main'])->num_rows() == 0){
-                        echo "<li><a href='".base_url()."$row[link]'><i class='glyphicon glyphicon-th-large'></i> <span>$row[nama_menu]</span></a></li>";
+                        echo "<li><a class='".active($row['link'])."' href='".base_url()."$row[link]'><i class='glyphicon glyphicon-th-large'></i> <span>$row[nama_menu]</span></a></li>";
                       }else{
                         echo "<li class='treeview'>
                                 <a href='".base_url()."$row[link]'><i class='glyphicon glyphicon-th-list'></i> <span>$row[nama_menu]</span><i class='fa fa-angle-left pull-right'></i></a>

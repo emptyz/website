@@ -1,11 +1,11 @@
 <?php 
 class Model_modul extends CI_model{
 	function modul(){
-		return $this->db->query("SELECT * FROM modul");
+		return $this->db->query("SELECT * FROM web_modul");
 	}
 
     function users_modul(){
-        return $this->db->query("SELECT * FROM modul");
+        return $this->db->query("SELECT * FROM web_modul");
     }
 
 	function modul_tambah(){
@@ -18,7 +18,7 @@ class Model_modul extends CI_model{
                         'aktif'=>$this->db->escape_str($this->input->post('d')),
                         'urutan'=>$this->db->escape_str($this->input->post('urutan')),
                         'link_seo'=>'');
-        $this->db->insert('modul',$datadb);
+        $this->db->insert('web_modul',$datadb);
     }
 
     function modul_update(){
@@ -32,19 +32,19 @@ class Model_modul extends CI_model{
                         'urutan'=>$this->db->escape_str($this->input->post('f')),
                         'link_seo'=>'');
         $this->db->where('id_modul',$this->input->post('id'));
-        $this->db->update('modul',$datadb);
+        $this->db->update('web_modul',$datadb);
     }
 
     function modul_edit($id){
-        return $this->db->query("SELECT * FROM modul where id_modul='$id'");
+        return $this->db->query("SELECT * FROM web_modul where id_modul='$id'");
     }
 
     function modul_delete($id){
-        return $this->db->query("DELETE FROM modul where id_modul='$id'");
+        return $this->db->query("DELETE FROM web_modul where id_modul='$id'");
     }
     
     function last_urutan(){
-        return $this->db->query("SELECT urutan FROM modul WHERE status='operator' ORDER BY urutan DESC limit 1 offset 1");
+        return $this->db->query("SELECT urutan FROM web_modul WHERE status='operator' ORDER BY urutan DESC limit 1 offset 1");
     }
 
 }

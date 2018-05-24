@@ -35,7 +35,7 @@ class Berita extends CI_Controller {
         $this->session->set_userdata('url',current_url());
         cek_session_all();
         $ids = $this->uri->segment(3);
-        $dat = $this->db->query("SELECT * FROM berita where judul_seo='$ids' OR id_berita='$ids'");
+        $dat = $this->db->query("SELECT * FROM web_berita where judul_seo='$ids' OR id_berita='$ids'");
         $row = $dat->row();
         $total = $dat->num_rows();
         if ($total == 0) {
@@ -73,7 +73,7 @@ class Berita extends CI_Controller {
 
     public function kategori() {
         $ids = $this->uri->segment(3);
-        $dat = $this->db->query("SELECT * FROM kategori where kategori_seo='" . $this->db->escape_str($ids) . "'");
+        $dat = $this->db->query("SELECT * FROM web_kategori where kategori_seo='" . $this->db->escape_str($ids) . "'");
         $row = $dat->row();
         $total = $dat->num_rows();
         if ($total == 0) {
@@ -116,22 +116,15 @@ class Berita extends CI_Controller {
             redirect('berita/detail/' . $row['judul_seo'] . '#listcomment');
         }
     }
-
-    function ambil_judul() {
-        $data['sdm'] = $this->db->query("SELECT * FROM berita WHERE id_kategori=31 limit 5");
-        $data['kinerja'] = $this->db->query("SELECT * FROM berita WHERE id_kategori=32 limit 5");
-        $data['pembayaran'] = $this->db->query("SELECT * FROM berita WHERE id_kategori=33 limit 5");
-        $this->template->load(template() . '/template', template() . '/view_home', $data);
-    }
     
     function cari(){
         $keyword = cetak($this->input->post('cari'));
             $data['title'] = 'Pencarian keyword : ' . $keyword;
-            $data['pencarianberita'] = $this->model_utama->semua_berita_cari(0, 21, $keyword);
+            $data['pencarianberita'] = $this->model_utama->semua_berita_cari(0, 7, $keyword);
             $jumlah = $this->model_utama->hitungberita()->num_rows();
-            $config['base_url'] = base_url() . 'berita/index';
+            $config['base_url'] = base_url() . 'berita/cari';
             $config['total_rows'] = $jumlah;
-            $config['per_page'] = 21;
+            $config['per_page'] = 10;
             if ($this->uri->segment('3') != '') {
                 $dari = $this->uri->segment('3');
             } else {
@@ -144,6 +137,8 @@ class Berita extends CI_Controller {
                 redirect('berita');
             }
             $this->pagination->initialize($config);
+                    $str_links = $this->pagination->create_links();
+        $data['links'] = explode('&nbsp;',$str_links );
             $this->template->load(template() . '/template', template() . '/view_semua_berita', $data);
     }
     

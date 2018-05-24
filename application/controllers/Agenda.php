@@ -27,7 +27,7 @@ class Agenda extends CI_Controller {
 
 	public function detail(){
 		$ids = $this->uri->segment(3);
-		$dat = $this->db->query("SELECT * FROM agenda where tema_seo='$ids' OR id_agenda='$ids'");
+		$dat = $this->db->query("SELECT * FROM web_agenda where tema_seo='$ids' OR id_agenda='$ids'");
 	    $row = $dat->row();
 	    $total = $dat->num_rows();
 	        if ($total == 0){

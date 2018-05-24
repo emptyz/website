@@ -1,7 +1,7 @@
 <?php 
 class Model_halaman extends CI_model{
     function halamanstatis(){
-        return $this->db->query("SELECT * FROM halamanstatis ORDER BY id_halaman DESC");
+        return $this->db->query("SELECT * FROM web_halamanstatis ORDER BY id_halaman DESC");
     }
 
     function halamanstatis_tambah(){
@@ -21,11 +21,11 @@ class Model_halaman extends CI_model{
                                     'tgl_posting'=>date('Y-m-d'),
                                     'gambar'=>$hasil['file_name']);
             }
-        $this->db->insert('halamanstatis',$datadb);
+        $this->db->insert('web_halamanstatis',$datadb);
     }
 
     function halamanstatis_edit($id){
-        return $this->db->query("SELECT * FROM halamanstatis where id_halaman='$id'");
+        return $this->db->query("SELECT * FROM web_halamanstatis where id_halaman='$id'");
     }
 
     function halamanstatis_update(){
@@ -46,10 +46,10 @@ class Model_halaman extends CI_model{
                                     'gambar'=>$hasil['file_name']);
         }
         $this->db->where('id_halaman',$this->input->post('id'));
-        $this->db->update('halamanstatis',$datadb);
+        $this->db->update('web_halamanstatis',$datadb);
     }
 
     function halamanstatis_delete($id){
-        return $this->db->query("DELETE FROM halamanstatis where id_halaman='$id'");
+        return $this->db->query("DELETE FROM web_halamanstatis where id_halaman='$id'");
     }
 }

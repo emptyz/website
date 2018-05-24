@@ -217,7 +217,7 @@ class Administrator extends CI_Controller {
         $data['record'] = $this->model_berita->list_berita();
 
         $data['rss'] = $this->model_berita->list_berita_rss();
-        $data['iden'] = $this->db->query("SELECT * FROM identitas ORDER BY id_identitas DESC LIMIT 1")->row_array();
+        $data['iden'] = $this->db->query("SELECT * FROM web_identitas ORDER BY id_identitas DESC LIMIT 1")->row_array();
         $this->load->view(template() . '/rss', $data);
         $this->template->load('administrator/template', 'administrator/mod_berita/view_berita', $data);
     }

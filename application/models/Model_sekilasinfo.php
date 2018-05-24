@@ -1,7 +1,7 @@
 <?php 
 class Model_sekilasinfo extends CI_model{
     function sekilasinfo(){
-        return $this->db->query("SELECT * FROM sekilasinfo ORDER BY id_sekilas DESC");
+        return $this->db->query("SELECT * FROM web_sekilasinfo ORDER BY id_sekilas DESC");
     }
 
     function sekilasinfo_tambah(){
@@ -21,11 +21,11 @@ class Model_sekilasinfo extends CI_model{
                                     'tgl_posting'=>date('Y-m-d'),
                                     'gambar'=>$hasil['file_name']);
             }
-        $this->db->insert('sekilasinfo',$datadb);
+        $this->db->insert('web_sekilasinfo',$datadb);
     }
 
     function sekilasinfo_edit($id){
-        return $this->db->query("SELECT * FROM sekilasinfo where id_sekilas='$id'");
+        return $this->db->query("SELECT * FROM web_sekilasinfo where id_sekilas='$id'");
     }
 
     function sekilasinfo_update(){
@@ -44,10 +44,10 @@ class Model_sekilasinfo extends CI_model{
                                     'gambar'=>$hasil['file_name']);
             }
         $this->db->where('id_sekilas',$this->input->post('id'));
-        $this->db->update('sekilasinfo',$datadb);
+        $this->db->update('web_sekilasinfo',$datadb);
     }
 
     function sekilasinfo_delete($id){
-        return $this->db->query("DELETE FROM sekilasinfo where id_sekilas='$id'");
+        return $this->db->query("DELETE FROM web_sekilasinfo where id_sekilas='$id'");
     }
 }

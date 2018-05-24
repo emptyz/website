@@ -10,20 +10,20 @@
                     <div class="container clearfix">
                         <div class="slider-caption slider-caption-center ">
                             <div class="transbox rounded">
-                                <h2 data-caption-animate="fadeInUp">UPSDM <span>Remunerasi</span></h2></div>
-                                <?php
-                                if ($this->session->islogin) {
-                                    echo "<div class='transbox rounded'><p class='d-none d-sm-block' data-caption-animate='fadeInUp' data-caption-delay='200'>Selamat datang " . $this->session->nama . " di website Unit Pengembangan SDM Manusia dan Remunerasi</p></div>";
-                                } else {
+                                <h2 data-caption-animate="fadeInUp">UPSDM & <span>Remunerasi</span></h2></div>
+                            <?php
+                            if ($this->session->islogin) {
+                                echo "<div class='transbox rounded'><p class='d-none d-sm-block' data-caption-animate='fadeInUp' data-caption-delay='200'>Selamat datang " . $this->session->nama . " di website Unit Pengembangan SDM Manusia dan Remunerasi</p></div>";
+                            } else {
 
-                                    echo "<div class='transbox rounded'><p class='d-none d-sm-block' data-caption-animate='fadeInUp' data-caption-delay='200'>Selamat datang di website Unit Pengembangan SDM Manusia dan Remunerasi</p></div>";
-                                    echo "<a href='#modal-login-form' data-lightbox='inline' data-caption-animate='fadeInUp' data-caption-delay='200' class='button button-rounded button-reveal button-large button-blue tright nomargin'><span>Login Remunerasi</span> <i class='icon-line2-login'></i></a>";
-                                }
-                                ?>
+                                echo "<div class='transbox rounded'><p class='d-none d-sm-block' data-caption-animate='fadeInUp' data-caption-delay='200'>Selamat datang di website Unit Pengembangan SDM Manusia dan Remunerasi</p></div>";
+                                echo "<a href='#modal-login-form' data-lightbox='inline' data-caption-animate='fadeInUp' data-caption-delay='200' class='button button-rounded button-reveal button-large button-blue tright nomargin'><span>Login Remunerasi</span> <i class='icon-line2-login'></i></a>";
+                            }
+                            ?>
                         </div>
                     </div>
                 </div>
-                <!--<div class="swiper-slide" style="background-image: url('<?php //echo base_url();  ?>template/<?php //echo template();  ?>/images/slider/swiper/3.jpg'); background-position: center top;">
+                <!--<div class="swiper-slide" style="background-image: url('<?php //echo base_url();    ?>template/<?php //echo template();    ?>/images/slider/swiper/3.jpg'); background-position: center top;">
                     <div class="container clearfix">
                         <div class="slider-caption">
                             <h2 data-caption-animate="fadeInUp">Great Performance</h2>
@@ -152,7 +152,7 @@
                 <a href="#" data-scrollto="#kinerja" class="one-page-arrow "><i class="icon-angle-down infinite animated fadeInDown"></i></a>
 
             </div><!-- Pengembangan SDM end -->
-            
+
 
             <!-- Kinerja Remunerasi
             ============================================= -->
@@ -278,7 +278,7 @@
                                     <div class="divider divider-short divider-center"></div>
                                     <!-- Pagination
                                     ============================================= -->
-                                    <?php echo "<a href='" . base_url() . "berita/kategori/kinerja-remunerasi' class='button button-rounded button-reveal button-large button-dark tright float-right'><i class='icon-line-arrow-right'></i><span>Kinerja Selengkapnya</span></a>" ?>
+                                    <?php echo "<a href='" . base_url() . "berita/kategori/kinerja' class='button button-rounded button-reveal button-large button-dark tright float-right'><i class='icon-line-arrow-right'></i><span>Kinerja Selengkapnya</span></a>" ?>
                                     <!-- .pager end -->
 
                                 </div>
@@ -426,10 +426,11 @@
 
 
                 <div class="row">
-                    <div class="col-lg-12 col-md-12">
+                    <div class="col-lg-6 col-md-6">
+
                         <!-- Posts
                         ============================================= -->
-                        <div id="oc-posts" class="owl-carousel posts-carousel carousel-widget bg-blue"  data-margin="20" data-nav="true" data-pagi="false" data-items-md="1" data-items-lg="3" data-items-xl="3">
+                        <div id="oc-posts" class="owl-carousel posts-carousel carousel-widget bg-blue"  data-margin="20" data-nav="true" data-pagi="false" data-items-md="1" data-items-lg="1" data-items-xl="1">
 
                             <?php
                             $berita = $this->model_utama->list_berita(31, 6);
@@ -472,13 +473,38 @@
 
 
                         </div><!-- #posts end -->
+                        <hr>
+                        <div class="center">
+                            <?php echo "<a href='" . base_url() . "berita/kategori/pengembangan-sdm' class='button button-rounded button-reveal button-medium  button-dark tright float-right'><i class='icon-line-arrow-right'></i><span>Selengkapnya</span></a>" ?>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="title-block">
+                            <h4>Peraturan</h4>                          
+                        </div>
+                        <div id="faqs" class="faqs">
+
+                            <div class="toggle faq">
+                                <div class="togglet"><i class="toggle-closed icon-book"></i><i class="toggle-open icon-book3"></i>Peraturan Rektor</div>
+                                <div class="togglec">isi peraturan</div>
+                            </div>
+                            <div class="toggle faq">
+                                <div class="togglet"><i class="toggle-closed icon-book"></i><i class="toggle-open icon-book3"></i>Edaran Rektor</div>
+                                <div class="togglec">isi peraturan</div>
+                            </div>
+                            <div class="toggle faq">
+                                <div class="togglet"><i class="toggle-closed icon-book"></i><i class="toggle-open icon-book3"></i>Edaran Wakil Rektor</div>
+                                <div class="togglec">isi peraturan</div>
+                            </div>
+
+
+
+                        </div>
                     </div>
                 </div>
 
 
-                <div class="center">
-                    <?php echo "<a href='" . base_url() . "berita/kategori/pengembangan-sdm' class='button button-rounded button-reveal button-large  button-dark tright float-right'><i class='icon-line-arrow-right'></i><span>Pengembangan SDM Selengkapnya</span></a>" ?>
-                </div>
+
                 <!-- Pagination
                 ============================================= -->
                 <!-- .pager end -->
@@ -519,7 +545,7 @@
 
                                 <div class="toggle faq <?php echo $row['kategori_seo'] ?>">
                                     <div class="togglet"><i class="toggle-closed icon-question-sign"></i><i class="toggle-open icon-chat-3"></i><?php echo $row['judul'] ?>?</div>
-                                    <div class="togglec"><?php echo $row['kategori_seo'] ?></div>
+                                    <div class="togglec"><?php echo $row['isi_faq'] ?></div>
                                 </div>
 
                             <?php endforeach; ?>

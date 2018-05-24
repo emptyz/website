@@ -1,7 +1,7 @@
 <?php 
 class Model_agenda extends CI_model{
     function agenda(){
-        return $this->db->query("SELECT * FROM agenda ORDER BY id_agenda DESC");
+        return $this->db->query("SELECT * FROM web_agenda ORDER BY id_agenda DESC");
     }
 
     function agenda_tambah(){
@@ -24,7 +24,7 @@ class Model_agenda extends CI_model{
     }
 
     function agenda_edit($id){
-        return $this->db->query("SELECT * FROM agenda where id_agenda='$id'");
+        return $this->db->query("SELECT * FROM web_agenda where id_agenda='$id'");
     }
 
     function agenda_update(){
@@ -43,10 +43,10 @@ class Model_agenda extends CI_model{
                         'jam'=>$this->db->escape_str($this->input->post('e')),
                         'username'=>$this->session->username);
         $this->db->where('id_agenda',$this->input->post('id'));
-        $this->db->update('agenda',$datadb);
+        $this->db->update('web_agenda',$datadb);
     }
 
     function agenda_delete($id){
-        return $this->db->query("DELETE FROM agenda where id_agenda='$id'");
+        return $this->db->query("DELETE FROM web_agenda where id_agenda='$id'");
     }
 }

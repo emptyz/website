@@ -73,7 +73,11 @@
                 ============================================= -->
                 <div class="row mb-3">
                     <div class="col-12">
-                        
+                                                <?php
+                        foreach ($links as $link) {
+                            echo "<ul class='pagination'><li class='page-item'>" . $link . "</li></ul>";
+                        }
+                        ?>
 
                     </div>
                 </div>

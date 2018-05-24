@@ -23,7 +23,7 @@ class Gallery extends CI_Controller {
 
 	public function detail(){
 		$ids = $this->uri->segment(3);
-		$dat = $this->db->query("SELECT * FROM album where album_seo='".$this->db->escape_str($ids)."'");
+		$dat = $this->db->query("SELECT * FROM web_album where album_seo='".$this->db->escape_str($ids)."'");
 	    $row = $dat->row();
 	    $total = $dat->num_rows();
 	        if ($total == 0){

@@ -1,7 +1,7 @@
 <?php 
 class Model_iklan extends CI_model{
     function banner(){
-        return $this->db->query("SELECT * FROM banner");
+        return $this->db->query("SELECT * FROM web_banner");
     }
 
     function banner_tambah(){
@@ -21,11 +21,11 @@ class Model_iklan extends CI_model{
 	                        'gambar'=>$hasil['file_name'],
 	                        'tgl_posting'=>date('Y-m-d'));
 	    }
-        $this->db->insert('banner',$datadb);
+        $this->db->insert('web_banner',$datadb);
     }
 
     function banner_edit($id){
-        return $this->db->query("SELECT * FROM banner where id_banner='$id'");
+        return $this->db->query("SELECT * FROM web_banner where id_banner='$id'");
     }
 
     function banner_update(){
@@ -46,7 +46,7 @@ class Model_iklan extends CI_model{
 	                        'tgl_posting'=>date('Y-m-d'));
 	    }
         $this->db->where('id_banner',$this->input->post('id'));
-        $this->db->update('banner',$datadb);
+        $this->db->update('web_banner',$datadb);
     }
 
     function banner_delete($id){

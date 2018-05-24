@@ -3,19 +3,19 @@
 class Model_hubungi extends CI_model {
 
     function pesan_masuk() {
-        return $this->db->query("SELECT * FROM hubungi ORDER BY id_hubungi DESC");
+        return $this->db->query("SELECT * FROM web_hubungi ORDER BY id_hubungi DESC");
     }
 
     function hitung_pesan_masuk() {
-        return $this->db->query("SELECT * FROM hubungi WHERE is_read=0 ORDER BY id_hubungi DESC");
+        return $this->db->query("SELECT * FROM web_hubungi WHERE is_read=0 ORDER BY id_hubungi DESC");
     }
 
     function pesan_baru($limit) {
-        return $this->db->query("SELECT * FROM hubungi WHERE is_read=0 ORDER BY id_hubungi DESC LIMIT $limit");
+        return $this->db->query("SELECT * FROM web_hubungi WHERE is_read=0 ORDER BY id_hubungi DESC LIMIT $limit");
     }
 
     function pesan_masuk_view($id) {
-        return $this->db->query("SELECT * FROM hubungi where id_hubungi='$id'");
+        return $this->db->query("SELECT * FROM web_hubungi where id_hubungi='$id'");
     }
 
     function pesan_masuk_kirim() {
@@ -71,7 +71,7 @@ class Model_hubungi extends CI_model {
             'pesan' => $pesan,
             'ip_address' => $ip_address,
             'tanggal' => date('Y-m-d'));
-        $this->db->insert('hubungi', $datadb);
+        $this->db->insert('web_hubungi', $datadb);
     }
     
     function kirimpesan(){
@@ -81,14 +81,14 @@ class Model_hubungi extends CI_model {
         $subjek = $this->input->post('d');
         $kategori = $this->input->post('e');
         $pesan = $this->input->post('g');
-        return $this->db->query("INSERT INTO hubungi (nama, email, telepon, subjek, kategori, pesan, tanggal) VALUES ('$nama', '$email', '$telepon', '$subjek', '$kategori', '$pesan', date('Y-m-d'))");
+        return $this->db->query("INSERT INTO web_hubungi (nama, email, telepon, subjek, kategori, pesan, tanggal) VALUES ('$nama', '$email', '$telepon', '$subjek', '$kategori', '$pesan', date('Y-m-d'))");
     }
                 function updateread($id) {
-        return $this->db->query("UPDATE hubungi SET is_read=1 WHERE id_hubungi='$id'");
+        return $this->db->query("UPDATE web_hubungi SET is_read=1 WHERE id_hubungi='$id'");
     }
 
     function delete_pesanmasuk($id) {
-        return $this->db->query("DELETE FROM hubungi WHERE id_hubungi='$id'");
+        return $this->db->query("DELETE FROM web_hubungi WHERE id_hubungi='$id'");
     }
 
 }

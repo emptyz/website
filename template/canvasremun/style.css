@@ -6553,7 +6553,7 @@ body:not(.device-sm):not(.device-xs) .countdown.countdown-large.coming-soon .cou
 	background-color: #1d68ba;
 	color: #FFF;
 	font-weight: 700;
-	text-transform: uppercase;
+	text-transform: capitalize;
 	letter-spacing: 1px;
 	border: none;
 	text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
@@ -7130,7 +7130,7 @@ body:not(.device-touch) .button.button-full strong {
 
 .button-blue { background-color: #1265A8; }
 .button-3d.button-blue:hover,
-.button-reveal.button-blue:hover { background-color: #444; }
+.button-reveal.button-blue:hover,
 .button-border.button-blue:hover,
 .button-border.button-blue.button-fill:before { background-color: #1265A8 !important; }
 
@@ -11894,7 +11894,7 @@ button.toast-close-button {
 
 #footer .footer-widgets-wrap {
 	position: relative;
-	padding: 80px 0;
+	padding: 10px 0;
 }
 
 .footer-widgets-wrap .col_full,
@@ -11911,7 +11911,7 @@ button.toast-close-button {
 .footer-widgets-wrap .col_five_sixth { margin-bottom: 0; }
 
 #copyrights {
-	padding: 40px 0;
+	padding: 5px 0;
 	background-color: #DDD;
 	font-size: 14px;
 	line-height: 1.8;

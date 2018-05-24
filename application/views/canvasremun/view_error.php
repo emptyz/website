@@ -10,11 +10,11 @@
 						<span>Silahkan melakukan pencarian halaman dibawah:</span>
 					</div>
 
-					<form action="#" method="get" role="form" class="divcenter nobottommargin">
+                                        <form action="<?php echo base_url()."berita/cari" ?>" method="post" role="form" class="divcenter nobottommargin">
 						<div class="input-group input-group-lg">
-							<input type="text" class="form-control" placeholder="Pencarian...">
+							<input type="text" name="cari" class="form-control" placeholder="Pencarian...">
 							<div class="input-group-append">
-								<button class="btn btn-warning" type="button">Search</button>
+								<button class="btn btn-warning" name="cari" type="button">Search</button>
 							</div>
 						</div>
 					</form>

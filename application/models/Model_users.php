@@ -5,11 +5,11 @@ class Model_users extends CI_model{
     }
     
     function login_remunerasi($username,$password){
-        return $this->db->query("SELECT a.* , b.level as level FROM remunerasi_pegawai a LEFT JOIN hak_akses b ON a.NIP = b.id_remunerasi where NIP='".$this->db->escape_str($username)."' AND passwd='".$this->db->escape_str($password)."'");
+        return $this->db->query("SELECT a.* , b.level as level FROM remunerasi_pegawai a LEFT JOIN web_hak_akses b ON a.NIP = b.id_remunerasi where NIP='".$this->db->escape_str($username)."' AND passwd='".$this->db->escape_str($password)."'");
     }
     
 	function users(){
-		return $this->db->query("SELECT * FROM users");
+		return $this->db->query("SELECT * FROM web_users");
 	}
 
 	function users_tambah(){
@@ -21,7 +21,7 @@ class Model_users extends CI_model{
                         'level'=>$this->db->escape_str($this->input->post('i')),
                         'blokir'=>'N',
                         'id_session'=>md5($this->input->post('a')));
-        $this->db->insert('users',$datadb);
+        $this->db->insert('web_users',$datadb);
     }
 
     function users_edit($id){
@@ -37,7 +37,7 @@ class Model_users extends CI_model{
                             'blokir'=>$this->db->escape_str($this->input->post('h')),
                             'id_session'=>md5($this->input->post('a')));
             $this->db->where('username',$this->input->post('id'));
-            $this->db->update('users',$datadb);
+            $this->db->update('web_users',$datadb);
         }else{
             $datadb = array('username'=>$this->db->escape_str($this->input->post('a')),
                             'password'=>md5($this->input->post('b')),
@@ -47,12 +47,12 @@ class Model_users extends CI_model{
                             'blokir'=>$this->db->escape_str($this->input->post('h')),
                             'id_session'=>md5($this->input->post('a')));
             $this->db->where('username',$this->input->post('id'));
-            $this->db->update('users',$datadb);
+            $this->db->update('web_users',$datadb);
         }
     }
 
     function users_delete($id){
-        return $this->db->query("DELETE FROM users where username='$id'");
+        return $this->db->query("DELETE FROM web_users where username='$id'");
     }
 
 }

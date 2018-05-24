@@ -1,7 +1,7 @@
 <?php 
 class Model_download extends CI_model{
     function download(){
-        return $this->db->query("SELECT * FROM download ORDER BY id_download DESC");
+        return $this->db->query("SELECT * FROM web_download ORDER BY id_download DESC");
     }
 
     function download_tambah(){
@@ -21,11 +21,11 @@ class Model_download extends CI_model{
                                     'tgl_posting'=>date('Y-m-d'),
                                     'hits'=>'0');
             }
-        $this->db->insert('download',$datadb);
+        $this->db->insert('web_download',$datadb);
     }
 
     function download_edit($id){
-        return $this->db->query("SELECT * FROM download where id_download='$id'");
+        return $this->db->query("SELECT * FROM web_download where id_download='$id'");
     }
 
     function download_update(){
@@ -46,15 +46,15 @@ class Model_download extends CI_model{
                                     'hits'=>'0');
             }
         $this->db->where('id_download',$this->input->post('id'));
-        $this->db->update('download',$datadb);
+        $this->db->update('web_download',$datadb);
     }
 
     function download_delete($id){
-        return $this->db->query("DELETE FROM download where id_download='$id'");
+        return $this->db->query("DELETE FROM web_download where id_download='$id'");
     }
     
     function pegawai(){
-        return $this->db->query("SELECT * FROM pegawai ORDER BY id_pegawai DESC");
+        return $this->db->query("SELECT * FROM web_pegawai ORDER BY id_pegawai DESC");
     }
 
     function pegawai_tambah(){
@@ -80,11 +80,11 @@ class Model_download extends CI_model{
                                     'tgl_posting'=>date('Y-m-d'),
                                     'hits'=>'0');
             }
-        $this->db->insert('pegawai',$datadb);
+        $this->db->insert('web_pegawai',$datadb);
     }
 
     function pegawai_edit($id){
-        return $this->db->query("SELECT * FROM pegawai where id_pegawai='$id'");
+        return $this->db->query("SELECT * FROM web_pegawai where id_pegawai='$id'");
     }
 
     function pegawai_update(){
@@ -111,10 +111,10 @@ class Model_download extends CI_model{
                                     'hits'=>'0');
             }
         $this->db->where('id_pegawai',$this->input->post('id'));
-        $this->db->update('pegawai',$datadb);
+        $this->db->update('web_pegawai',$datadb);
     }
 
     function pegawai_delete($id){
-        return $this->db->query("DELETE FROM pegawai where id_pegawai='$id'");
+        return $this->db->query("DELETE FROM web_pegawai where id_pegawai='$id'");
     }
 }

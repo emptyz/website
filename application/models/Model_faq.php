@@ -9,11 +9,11 @@
 class Model_faq extends CI_model{
     
         function kategori_faq(){
-        return $this->db->query("SELECT * FROM kategori ORDER BY id_kategori DESC");
+        return $this->db->query("SELECT * FROM web_kategori ORDER BY id_kategori DESC");
     }
     
      function list_faq(){
-        return $this->db->query("SELECT a.*, b.kategori_seo FROM faq a LEFT JOIN kategori b ON a.id_kategori=b.id_kategori ORDER BY a.id_faq DESC");
+        return $this->db->query("SELECT a.*, b.kategori_seo FROM web_faq a LEFT JOIN web_kategori b ON a.id_kategori=b.id_kategori ORDER BY a.id_faq DESC");
     }
 
     function list_faq_tambah(){
@@ -30,18 +30,17 @@ class Model_faq extends CI_model{
                                 'jam'=>date('H:i:s'),
                                 'dibaca'=>'0');
             
-        $this->db->insert('faq',$datadb);
+        $this->db->insert('web_faq',$datadb);
     }
 
     function list_faq_edit($id){
-        return $this->db->query("SELECT * FROM faq where id_faq='$id'");
+        return $this->db->query("SELECT * FROM web_faq where id_faq='$id'");
     }
 
     function list_faq_update(){
 
                 $datadb = array('id_kategori'=>$this->db->escape_str($this->input->post('b')),
                                 'username'=>$this->db->escape_str($this->input->post('u')),
-                                'editor'=>$this->db->escape_str($this->input->post('editor')),
                                 'judul'=>$this->db->escape_str($this->input->post('a')),
                                 'judul_seo'=>seo_title($this->input->post('a')),
                                 'isi_faq'=>$this->input->post('d'),
@@ -52,11 +51,11 @@ class Model_faq extends CI_model{
                                 'dibaca'=>'0');
             
         $this->db->where('id_faq',$this->input->post('id'));
-        $this->db->update('faq',$datadb);
+        $this->db->update('web_faq',$datadb);
     }
 
     function list_faq_delete($id){
-        return $this->db->query("DELETE FROM faq where id_faq='$id'");
+        return $this->db->query("DELETE FROM web_faq where id_faq='$id'");
     }
 
     

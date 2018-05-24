@@ -1,11 +1,11 @@
 <?php 
 class Model_shoutbox extends CI_model{
     function shoutbox(){
-        return $this->db->query("SELECT * FROM shoutbox ORDER BY id_shoutbox DESC");
+        return $this->db->query("SELECT * FROM web_shoutbox ORDER BY id_shoutbox DESC");
     }
 
     function shoutbox_edit($id){
-        return $this->db->query("SELECT * FROM shoutbox where id_shoutbox='$id'");
+        return $this->db->query("SELECT * FROM web_shoutbox where id_shoutbox='$id'");
     }
 
     function shoutbox_update(){
@@ -16,10 +16,10 @@ class Model_shoutbox extends CI_model{
                         'jam'=>date('H:i:s'),
                         'aktif'=>$this->db->escape_str($this->input->post('d')));
         $this->db->where('id_shoutbox',$this->input->post('id'));
-        $this->db->update('shoutbox',$datadb);
+        $this->db->update('web_shoutbox',$datadb);
     }
 
     function shoutbox_delete($id){
-        return $this->db->query("DELETE FROM shoutbox where id_shoutbox='$id'");
+        return $this->db->query("DELETE FROM web_shoutbox where id_shoutbox='$id'");
     }
 }

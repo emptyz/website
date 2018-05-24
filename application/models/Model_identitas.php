@@ -1,7 +1,7 @@
 <?php 
 class Model_identitas extends CI_model{
     function identitas(){
-        return $this->db->query("SELECT * FROM identitas ORDER BY id_identitas DESC LIMIT 1");
+        return $this->db->query("SELECT * FROM web_identitas ORDER BY id_identitas DESC LIMIT 1");
     }
 
     function identitas_update(){
@@ -24,6 +24,6 @@ class Model_identitas extends CI_model{
                                     'favicon'=>$hasil['file_name']);
             }
             $this->db->where('id_identitas',1);
-            $this->db->update('identitas',$datadb);
+            $this->db->update('web_identitas',$datadb);
     }
 }

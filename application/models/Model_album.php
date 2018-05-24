@@ -1,7 +1,7 @@
 <?php 
 class Model_album extends CI_model{
     function album(){
-        return $this->db->query("SELECT * FROM album ORDER BY id_album DESC");
+        return $this->db->query("SELECT * FROM web_album ORDER BY id_album DESC");
     }
 
     function album_tambah(){
@@ -21,11 +21,11 @@ class Model_album extends CI_model{
                             'gbr_album'=>$hasil['file_name'],
                             'aktif'=>'Y');
         }
-        $this->db->insert('album',$datadb);
+        $this->db->insert('web_album',$datadb);
     }
 
     function album_edit($id){
-        return $this->db->query("SELECT * FROM album where id_album='$id'");
+        return $this->db->query("SELECT * FROM web_album where id_album='$id'");
     }
 
     function album_update(){
@@ -46,18 +46,18 @@ class Model_album extends CI_model{
                             'aktif'=>$this->db->escape_str($this->input->post('d')),);
         }
         $this->db->where('id_album',$this->input->post('id'));
-        $this->db->update('album',$datadb);
+        $this->db->update('web_album',$datadb);
     }
 
     function album_delete($id){
-        return $this->db->query("DELETE FROM album where id_album='$id'");
+        return $this->db->query("DELETE FROM web_album where id_album='$id'");
     }
 
 
 
 
     function galeri(){
-        return $this->db->query("SELECT a.*, b.jdl_album FROM gallery a JOIN album b ON a.id_album=b.id_album ORDER BY a.id_gallery DESC");
+        return $this->db->query("SELECT a.*, b.jdl_album FROM web_gallery a JOIN web_album b ON a.id_album=b.id_album ORDER BY a.id_gallery DESC");
     }
 
     function galeri_tambah(){
@@ -79,11 +79,11 @@ class Model_album extends CI_model{
                             'keterangan'=>$this->input->post('c'),
                             'gbr_gallery'=>$hasil['file_name']);
         }
-        $this->db->insert('gallery',$datadb);
+        $this->db->insert('web_gallery',$datadb);
     }
 
     function galeri_edit($id){
-        return $this->db->query("SELECT * FROM gallery where id_gallery='$id'");
+        return $this->db->query("SELECT * FROM web_gallery where id_gallery='$id'");
     }
 
     function galeri_update(){
@@ -106,10 +106,10 @@ class Model_album extends CI_model{
                             'gbr_gallery'=>$hasil['file_name']);
         }
         $this->db->where('id_gallery',$this->input->post('id'));
-        $this->db->update('gallery',$datadb);
+        $this->db->update('web_gallery',$datadb);
     }
 
     function galeri_delete($id){
-        return $this->db->query("DELETE FROM gallery where id_gallery='$id'");
+        return $this->db->query("DELETE FROM web_gallery where id_gallery='$id'");
     }
 }

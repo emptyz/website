@@ -4,7 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Page extends CI_Controller {
 	public function detail(){
 		$ids = $this->uri->segment(3);
-		$dat = $this->db->query("SELECT * FROM `halamanstatis` where lower(replace(judul,' ','-'))='$ids'");
+		$dat = $this->db->query("SELECT * FROM `web_halamanstatis` where lower(replace(judul,' ','-'))='$ids'");
 	    $row = $dat->row();
 	    $total = $dat->num_rows();
 	        if ($total == 0){

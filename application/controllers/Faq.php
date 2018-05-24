@@ -35,7 +35,7 @@ class faq extends CI_Controller {
         $this->session->set_userdata('url',current_url());
         cek_session_all();
         $ids = $this->uri->segment(3);
-        $dat = $this->db->query("SELECT * FROM faq where judul_seo='$ids' OR id_faq='$ids'");
+        $dat = $this->db->query("SELECT * FROM web_faq where judul_seo='$ids' OR id_faq='$ids'");
         $row = $dat->row();
         $total = $dat->num_rows();
         if ($total == 0) {
@@ -66,7 +66,7 @@ class faq extends CI_Controller {
 
     public function kategori() {
         $ids = $this->uri->segment(3);
-        $dat = $this->db->query("SELECT * FROM kategori where kategori_seo='" . $this->db->escape_str($ids) . "'");
+        $dat = $this->db->query("SELECT * FROM web_kategori where kategori_seo='" . $this->db->escape_str($ids) . "'");
         $row = $dat->row();
         $total = $dat->num_rows();
         if ($total == 0) {
