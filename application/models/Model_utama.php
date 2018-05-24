@@ -165,7 +165,7 @@ class Model_utama extends CI_model {
     }
 
     function agenda_detail($id) {
-        return $this->db->query("SELECT a.*, b.NAMA FROM agenda a JOIN remunerasi_pegawai b ON a.username=b.NIP where a.tema_seo='" . $this->db->escape_str($id) . "'");
+        return $this->db->query("SELECT a.*, b.NAMA as nama_lengkap FROM agenda a JOIN remunerasi_pegawai b ON a.username=b.NIP where a.tema_seo='" . $this->db->escape_str($id) . "'");
     }
 
     function index($start, $limit) {
@@ -197,14 +197,22 @@ class Model_utama extends CI_model {
     }
 
     function kirim_Pesan() {
-        $nama = cetak($this->input->post('a'));
-        $email = cetak($this->input->post('b'));
-        $subjek = cetak($this->input->post('c'));
-        $pesan = cetak($this->input->post('d'));
+        $nama = $this->input->post('a');
+        $email = $this->input->post('b');
+        $telepon = $this->input->post('c');
+        $subjek = $this->input->post('d');
+        $kategori = $this->input->post('e');
+        //$datapendukung = $this->input->post('f');
+        $pesan = $this->input->post('g');
+        $ip_address = $this->input->post('h');
         $datadb = array('nama' => $nama,
             'email' => $email,
+            'telepon' => $telepon,
             'subjek' => $subjek,
+            'id_kategori' => $kategori,
+            //'file_pendukung' => $datapendukung,
             'pesan' => $pesan,
+            'ip_address' => $ip_address,
             'tanggal' => date('Y-m-d'));
         $this->db->insert('hubungi', $datadb);
     }

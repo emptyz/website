@@ -1,6 +1,6 @@
 
 
-<section id="slider" class="slider-element slider-parallax swiper_wrapper clearfix">
+<section id="slider" class="slider-element slider-parallax swiper_wrapper full-screen clearfix">
 
     <div class="slider-parallax-inner">
 
@@ -8,36 +8,37 @@
             <div class="swiper-wrapper">
                 <div class="swiper-slide dark" style="background-image: url('<?php echo base_url(); ?>template/<?php echo template(); ?>/images/slider/full/rektorat.jpg');">
                     <div class="container clearfix">
-                        <div class="slider-caption slider-caption-center">
-                            <h2 data-caption-animate="fadeInUp">UPSDM Remunerasi</h2>
-                            <?php
-                            if ($this->session->islogin) {
-                                echo "<p class='d-none d-sm-block' data-caption-animate='fadeInUp' data-caption-delay='200'>Selamat datang " . $this->session->nama . " di website Unit Pengembangan SDM Manusia dan Remunerasi</p>";
-                            } else {
+                        <div class="slider-caption slider-caption-center ">
+                            <div class="transbox rounded">
+                                <h2 data-caption-animate="fadeInUp">UPSDM <span>Remunerasi</span></h2></div>
+                                <?php
+                                if ($this->session->islogin) {
+                                    echo "<div class='transbox rounded'><p class='d-none d-sm-block' data-caption-animate='fadeInUp' data-caption-delay='200'>Selamat datang " . $this->session->nama . " di website Unit Pengembangan SDM Manusia dan Remunerasi</p></div>";
+                                } else {
 
-                                echo "<p class='d-none d-sm-block' data-caption-animate='fadeInUp' data-caption-delay='200'>Selamat datang di website Unit Pengembangan SDM Manusia dan Remunerasi</p>";
-                                echo "<a href='#modal-login-form' data-lightbox='inline' data-caption-animate='fadeInUp' data-caption-delay='200' class='button button-rounded button-reveal button-large button-blue tright nomargin'><span>Login Remunerasi</span> <i class='icon-line2-login'></i></a>";
-                            }
-                            ?>
+                                    echo "<div class='transbox rounded'><p class='d-none d-sm-block' data-caption-animate='fadeInUp' data-caption-delay='200'>Selamat datang di website Unit Pengembangan SDM Manusia dan Remunerasi</p></div>";
+                                    echo "<a href='#modal-login-form' data-lightbox='inline' data-caption-animate='fadeInUp' data-caption-delay='200' class='button button-rounded button-reveal button-large button-blue tright nomargin'><span>Login Remunerasi</span> <i class='icon-line2-login'></i></a>";
+                                }
+                                ?>
                         </div>
                     </div>
                 </div>
-                <div class="swiper-slide" style="background-image: url('images/slider/swiper/3.jpg'); background-position: center top;">
+                <!--<div class="swiper-slide" style="background-image: url('<?php //echo base_url();  ?>template/<?php //echo template();  ?>/images/slider/swiper/3.jpg'); background-position: center top;">
                     <div class="container clearfix">
                         <div class="slider-caption">
                             <h2 data-caption-animate="fadeInUp">Great Performance</h2>
                             <p class="d-none d-sm-block" data-caption-animate="fadeInUp" data-caption-delay="200">You'll be surprised to see the Final Results of your Creation &amp; would crave for more.</p>
                         </div>
                     </div>
-                </div>
+                </div>-->
             </div>
-            <div class="slider-arrow-left"><i class="icon-angle-left"></i></div>
+            <!--<div class="slider-arrow-left"><i class="icon-angle-left"></i></div>
             <div class="slider-arrow-right"><i class="icon-angle-right"></i></div>
-            <div class="slide-number"><div class="slide-number-current"></div><span>/</span><div class="slide-number-total"></div></div>
+            <div class="slide-number"><div class="slide-number-current"></div><span>/</span><div class="slide-number-total"></div></div>-->
         </div>
 
     </div>
-
+    <a href="#" data-scrollto="#remunerasi" class="one-page-arrow dark"><i class="icon-angle-down infinite animated fadeInDown"></i></a>
 </section>
 
 
@@ -54,7 +55,7 @@
             <!-- Pembayaran Remunerasi
     ============================================= -->
             <div class="container clearfix  contentcolor rounded">
-                <div class="fancy-title title-center title-dotted-border">
+                <div id="remunerasi" class="fancy-title title-center title-dotted-border">
                     <h2>Remunerasi</h2>
                 </div>
 
@@ -148,13 +149,15 @@
                 ============================================= -->
                 <?php echo "<a href='" . base_url() . "berita/kategori/remunerasi' class='button button-rounded button-reveal button-large button-dark tright float-right'><i class='icon-line-arrow-right'></i><span>Remunerasi Selengkapnya</span></a>" ?>
                 <!-- .pager end -->
+                <a href="#" data-scrollto="#kinerja" class="one-page-arrow "><i class="icon-angle-down infinite animated fadeInDown"></i></a>
 
             </div><!-- Pengembangan SDM end -->
+            
 
             <!-- Kinerja Remunerasi
             ============================================= -->
             <div class="container clearfix contentcolor">
-                <div class="fancy-title title-center title-dotted-border ">
+                <div id="kinerja" class="fancy-title title-center title-dotted-border ">
                     <h2>Kinerja</h2>
                 </div>
                 <div class="tabs clearfix tabs-justify" id="tab-3">
@@ -357,6 +360,7 @@
                                     </ul>
 
                                 </div>
+
                                 <div class="col-lg-6 col-md-6">
 
                                     <h3>Tenaga Kependidikan</h3>
@@ -405,6 +409,7 @@
                     </div>
 
                 </div>
+                <a href="#" data-scrollto="#sdm" class="one-page-arrow "><i class="icon-angle-down infinite animated fadeInDown"></i></a>
 
             </div><!-- Kinerja Remunerasi end -->
 
@@ -415,7 +420,7 @@
             <!-- Pengembangan SDM
                   ============================================= -->
             <div class="container clearfix contentcolor contentcolor">
-                <div class="fancy-title title-center title-dotted-border">
+                <div id="sdm" class="fancy-title title-center title-dotted-border">
                     <h2>Pengembangan SDM</h2>
                 </div>
 
@@ -480,85 +485,105 @@
 
             </div><!-- Pembayaran Remunerasi end -->
 
+
+
+            <!-- FAQ dan agenda
+                  ============================================= -->
             <div class="container clearfix contentcolor contentcolor">
-                <div class="fancy-title title-center title-dotted-border">
-                    <h2>Frequently Asked Question</h2>
-                </div>
 
-
+                <div class="divider divider-center"><i class="icon-cloud"></i></div>
                 <!-- Post Content
                 ============================================= -->
+                <div class="row">
+                    <div class="col-lg-8 col-md-8">
+                        <div class="title-block">
+                            <h4>Frequently Asked Questions</h4>
+                            <span>Beberapa pertanyaan mengenai UPSDM dan Remunerasi</span>
+                        </div>
+                        <ul id="portfolio-filter" class="portfolio-filter clearfix">
 
-                <center>
-                    <ul id="portfolio-filter" class="portfolio-filter clearfix">
+                            <li class="activeFilter"><a href="#" data-filter="all">Semua</a></li>
+                            <li><a href="#" data-filter=".remunerasi">Pembayaran Remunerasi</a></li>
+                            <li><a href="#" data-filter=".kinerja">Kinerja Remunerasi</a></li>
+                            <li><a href="#" data-filter=".pengembangan-sdm">Pengembangan SDM</a></li>
 
-                        <li class="activeFilter"><a href="#" data-filter="all">Semua</a></li>
-                        <li><a href="#" data-filter=".faq-marketplace">Pembayaran Remunerasi</a></li>
-                        <li><a href="#" data-filter=".faq-legal">Kinerja Remunerasi</a></li>
-                        <li><a href="#" data-filter=".faq-itemdiscussion">Pengembangan SDM</a></li>
+                        </ul>
 
-                    </ul>
-                </center>
+                        <div class="clear"></div>
 
-                <div class="clear"></div>
+                        <div id="faqs" class="faqs">
+                            <?php
+                            $faq = $this->model_faq->list_faq();
+                            foreach ($faq->result_array() as $row):
+                                ?>
 
-                <div id="faqs" class="faqs">
+                                <div class="toggle faq <?php echo $row['kategori_seo'] ?>">
+                                    <div class="togglet"><i class="toggle-closed icon-question-sign"></i><i class="toggle-open icon-chat-3"></i><?php echo $row['judul'] ?>?</div>
+                                    <div class="togglec"><?php echo $row['kategori_seo'] ?></div>
+                                </div>
 
-                    <div class="toggle faq faq-marketplace faq-authors">
-                        <div class="togglet"><i class="toggle-closed icon-question-sign"></i><i class="toggle-open icon-question-sign"></i>How do I become an author?</div>
-                        <div class="togglec">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda, dolorum, vero ipsum molestiae minima odio quo voluptate illum excepturi quam cum voluptates doloribus quae nisi tempore necessitatibus dolores ducimus enim libero eaque explicabo suscipit animi at quaerat aliquid ex expedita perspiciatis? Saepe, aperiam, nam unde quas beatae vero vitae nulla.</div>
+                            <?php endforeach; ?>
+
+
+                        </div>
                     </div>
+                    <div class="col-lg-4 col-md-4">
+                        <div class="title-block">
+                            <h4>Agenda</h4>
+                            <span>Agenda Kegiatan UPSDM dan Remunerasi</span>
+                        </div>
 
-                    <div class="toggle faq faq-authors faq-miscellaneous">
-                        <div class="togglet"><i class="toggle-closed icon-comments-alt"></i><i class="toggle-open icon-comments-alt"></i>Helpful Resources for Authors</div>
-                        <div class="togglec">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda, dolorum, vero ipsum molestiae minima odio quo voluptate illum excepturi quam cum voluptates doloribus quae nisi tempore necessitatibus dolores ducimus enim libero eaque explicabo suscipit animi at quaerat aliquid ex expedita perspiciatis? Saepe, aperiam, nam unde quas beatae vero vitae nulla.</div>
-                    </div>
+                        <div id="posts" class="events">
+                            <?php
+                            $agenda = $this->model_utama->agenda(0, 1);
+                            foreach ($agenda->result_array() as $record) {
+                                $isi_berita = strip_tags($record['isi_agenda']);
+                                ?>
 
-                    <div class="toggle faq faq-miscellaneous">
-                        <div class="togglet"><i class="toggle-closed icon-lock3"></i><i class="toggle-open icon-lock3"></i>How much money can I make?</div>
-                        <div class="togglec">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda, dolorum, vero ipsum molestiae minima odio quo voluptate illum excepturi quam cum voluptates doloribus quae nisi tempore necessitatibus dolores ducimus enim libero eaque explicabo suscipit animi at quaerat aliquid ex expedita perspiciatis? Saepe, aperiam, nam unde quas beatae vero vitae nulla.</div>
-                    </div>
+                                <div class="entry clearfix">
+                                    <div class="entry-c">
+                                        <div class="entry-title">
+                                            <h4><?php echo "<a href= '" . base_url() . "agenda/detail/$record[tema_seo]'><b>$record[tema]</b></a>"; ?></h4>
+                                        </div>
+                                        <ul class="entry-meta clearfix">
+                                            <?php
+                                            $current = strtotime(date("Y-m-d"));
+                                            $date = strtotime($record['tgl_mulai']);
 
-                    <div class="toggle faq faq-authors faq-legal faq-itemdiscussion">
-                        <div class="togglet"><i class="toggle-closed icon-download-alt"></i><i class="toggle-open icon-download-alt"></i>Can I offer my items for free on a promotional basis?</div>
-                        <div class="togglec">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda, dolorum, vero ipsum molestiae minima odio quo voluptate illum excepturi quam cum voluptates doloribus quae nisi tempore necessitatibus dolores ducimus enim libero eaque explicabo suscipit animi at quaerat aliquid ex expedita perspiciatis? Saepe, aperiam, nam unde quas beatae vero vitae nulla.</div>
-                    </div>
+                                            $datediff = $date - $current;
+                                            $difference = floor($datediff / (60 * 60 * 24));
+                                            if ($difference == 0) {
+                                                echo '<li><span class="badge badge-success">Hari Ini</span></li>';
+                                            } else if ($difference > 1) {
+                                                echo '<li><span class="badge badge-info">Akan datang</span></li>';
+                                            } else if ($difference > 0) {
+                                                echo '<li><span class="badge badge-warning">Besok</span></li>';
+                                            } else if ($difference < -1) {
+                                                echo '<li><span class="badge badge-danger">Telah Berlalu</span></li>';
+                                            } else {
+                                                echo '<li><span class="badge badge-danger">Kemarin</span></li>';
+                                            }
+                                            ?>
 
-                    <div class="toggle faq faq-marketplace faq-authors">
-                        <div class="togglet"><i class="toggle-closed icon-ok"></i><i class="toggle-open icon-ok"></i>An Introduction to the Marketplaces for Authors</div>
-                        <div class="togglec">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda, dolorum, vero ipsum molestiae minima odio quo voluptate illum excepturi quam cum voluptates doloribus quae nisi tempore necessitatibus dolores ducimus enim libero eaque explicabo suscipit animi at quaerat aliquid ex expedita perspiciatis? Saepe, aperiam, nam unde quas beatae vero vitae nulla.</div>
-                    </div>
+                                            <li><a href="#"><i class="icon-map-marker2"></i> <?php echo $record['tempat']; ?></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <?php echo "<a href='" . base_url() . "berita/kategori/remunerasi' class='button button-rounded button-reveal button-large button-dark tright float-right'><i class='icon-line-arrow-right'></i><span>Semua Agenda</span></a>" ?>
+                                <?php
+                            }
+                            ?>
 
-                    <div class="toggle faq faq-affiliates faq-miscellaneous">
-                        <div class="togglet"><i class="toggle-closed icon-money"></i><i class="toggle-open icon-money"></i>How does the Tuts+ Premium affiliate program work?</div>
-                        <div class="togglec">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda, dolorum, vero ipsum molestiae minima odio quo voluptate illum excepturi quam cum voluptates doloribus quae nisi tempore necessitatibus dolores ducimus enim libero eaque explicabo suscipit animi at quaerat aliquid ex expedita perspiciatis? Saepe, aperiam, nam unde quas beatae vero vitae nulla.</div>
-                    </div>
+                        </div>
 
-                    <div class="toggle faq faq-legal faq-itemdiscussion">
-                        <div class="togglet"><i class="toggle-closed icon-picture"></i><i class="toggle-open icon-picture"></i>What Images, Videos, Code or Music Can I Use in my Items?</div>
-                        <div class="togglec">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda, dolorum, vero ipsum molestiae minima odio quo voluptate illum excepturi quam cum voluptates doloribus quae nisi tempore necessitatibus dolores ducimus enim libero eaque explicabo suscipit animi at quaerat aliquid ex expedita perspiciatis? Saepe, aperiam, nam unde quas beatae vero vitae nulla.</div>
-                    </div>
 
-                    <div class="toggle faq faq-legal faq-authors faq-itemdiscussion">
-                        <div class="togglet"><i class="toggle-closed icon-file3"></i><i class="toggle-open icon-file3"></i>Can I use trademarked names in my items?</div>
-                        <div class="togglec">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda, dolorum, vero ipsum molestiae minima odio quo voluptate illum excepturi quam cum voluptates doloribus quae nisi tempore necessitatibus dolores ducimus enim libero eaque explicabo suscipit animi at quaerat aliquid ex expedita perspiciatis? Saepe, aperiam, nam unde quas beatae vero vitae nulla.</div>
-                    </div>
 
-                    <div class="toggle faq faq-affiliates">
-                        <div class="togglet"><i class="toggle-closed icon-bar-chart"></i><i class="toggle-open icon-bar-chart"></i>Tips for Increasing Your Referral Income</div>
-                        <div class="togglec">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda, dolorum, vero ipsum molestiae minima odio quo voluptate illum excepturi quam cum voluptates doloribus quae nisi tempore necessitatibus dolores ducimus enim libero eaque explicabo suscipit animi at quaerat aliquid ex expedita perspiciatis? Saepe, aperiam, nam unde quas beatae vero vitae nulla.</div>
                     </div>
 
 
                 </div>
-
-
                 <!-- .postcontent end -->
-
-
-
-
-            </div>
+            </div><!-- FAQ dan agenda end -->
 
 
         </div>

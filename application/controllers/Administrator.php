@@ -250,10 +250,10 @@ class Administrator extends CI_Controller {
         }
     }
 
-    function delete_berita($gambar) {
+    function delete_berita() {
         cek_session_opadmin();
         $id = $this->uri->segment(3);
-        $this->model_berita->list_berita_delete($id, $gambar);
+        $this->model_berita->list_berita_delete($id);
         redirect('administrator/berita');
     }
 
@@ -876,5 +876,47 @@ class Administrator extends CI_Controller {
         $this->model_album->galeri_delete($id);
         redirect('administrator/galeri');
     }
+    
+    // Controller Modul FAQ
+     function faq() {
+        cek_session_opadmin();
+        $data['record'] = $this->model_faq->list_faq();
+        $this->template->load('administrator/template', 'administrator/mod_faq/view_faq', $data);
+    }
+
+    function tambah_faq() {
+        cek_session_opadmin();
+        if (isset($_POST['submit'])) {
+            $this->model_faq->list_faq_tambah();
+            redirect('administrator/faq');
+        } else {
+            $data['record'] = $this->model_faq->kategori_faq();
+            $data['users'] = $this->model_users->users();
+            $this->template->load('administrator/template', 'administrator/mod_faq/view_faq_tambah', $data);
+        }
+    }
+
+    function edit_faq() {
+        cek_session_opadmin();
+        $id = $this->uri->segment(3);
+        if (isset($_POST['submit'])) {
+            $this->model_faq->list_faq_update();
+            redirect('administrator/faq');
+        } else {
+            $data['record'] = $this->model_faq->kategori_faq();
+            $data['rows'] = $this->model_faq->list_faq_edit($id)->row_array();
+            $data['users'] = $this->model_users->users();
+            $this->template->load('administrator/template', 'administrator/mod_faq/view_faq_edit', $data);
+        }
+    }
+
+    function delete_faq() {
+        cek_session_opadmin();
+        $id = $this->uri->segment(3);
+        $this->model_faq->list_faq_delete($id);
+        redirect('administrator/faq');
+    }
+    
+    
 
 }

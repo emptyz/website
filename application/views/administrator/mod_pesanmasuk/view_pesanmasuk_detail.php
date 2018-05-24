@@ -18,7 +18,7 @@
                   <tbody>
 
                     <tr><th width='120px' scope='row'>Nama</th>  <td><input type='text' class='form-control' name='a' value='$rows[nama]' readonly='on'></td></tr>
-                    <tr><th width='120px' scope='row'>Email</th> <td><input type='text' class='form-control' name='b' value='$rows[email]' readonly='on'></td></tr>
+                    <tr><th width='120px' scope='row'>Email </th> <td><input type='text' class='form-control' name='b' value='$rows[email]' readonly='on'></td></tr>
                     <tr><th width='120px' scope='row'>Subjek</th>   <td><input type='text' class='form-control' name='c' value='$rows[subjek]' readonly='on'></td></tr>
                     <tr><th scope='row'>Isi Pesan</th>                    <td><textarea class='form-control' name='isi' style='height:120px'  readonly='on'>$rows[pesan]</textarea></td></tr>
                     <tr><th scope='row'>Balas Pesan</th>                    <td><textarea class='textarea form-control' name='d' style='height:150px'></textarea></td></tr>

@@ -217,7 +217,7 @@ h2 > span:not(.nocolor):not(.badge),
 h3 > span:not(.nocolor):not(.badge),
 h4 > span:not(.nocolor):not(.badge),
 h5 > span:not(.nocolor):not(.badge),
-h6 > span:not(.nocolor):not(.badge) { color: #1d68ba; }
+h6 > span:not(.nocolor):not(.badge) { color: #FFFF00; }
 
 p,
 pre,
@@ -3085,8 +3085,8 @@ body:not(.stretched) .slider-parallax .slider-parallax-inner { left: auto; }
 }
 
 .slider-caption p {
-	margin-top: 30px;
-	margin-bottom: 10px;
+	margin-top: 10px;
+	margin-bottom: 30px;
 	font-size: 24px;
 }
 
@@ -6239,7 +6239,7 @@ td.actions {
 
 .events .entry,
 .ievent {
-	padding: 20px;
+	padding: 10px;
 	background-color: #F9F9F9;
 	border-bottom: 3px solid #EEE;
 }
@@ -7130,7 +7130,7 @@ body:not(.device-touch) .button.button-full strong {
 
 .button-blue { background-color: #1265A8; }
 .button-3d.button-blue:hover,
-.button-reveal.button-blue:hover,
+.button-reveal.button-blue:hover { background-color: #444; }
 .button-border.button-blue:hover,
 .button-border.button-blue.button-fill:before { background-color: #1265A8 !important; }
 
@@ -13569,6 +13569,12 @@ body:not(.no-transition) #wrapper,
 .rating-container .filled-stars {
 	-webkit-text-stroke: 0px !important;
 	text-shadow: none !important;
+}
+
+div.transbox {
+  background-color: #000;
+  opacity: 0.7;
+  filter: alpha(opacity=70); /* For IE8 and earlier */
 }
 
 

@@ -22,7 +22,8 @@
                 <ul>
                     <?php
                     if ($this->session->islogin) {
-                        echo "  <li><a href='http://remunerasi.uns.ac.id/35' target='_blank'>Pegawai</i></a>
+                        echo "  <li><a href='".base_url()."'>Beranda</i></a>
+                                <li><a href='http://remunerasi.uns.ac.id/35' target='_blank'>Pegawai</i></a>
                                 <li><a href='http://remunerasi.uns.ac.id/63' target='_blank'>Kinerja </i></a></li>
                                 <li><a href='http://remunerasi.uns.ac.id/65' target='_blank'>Perhitungan </i></a></li>
                                 <li><a href='http://remunerasi.uns.ac.id/64' target='_blank'>Nilai Perilaku </i></a></li>
@@ -93,6 +94,7 @@
                                 </ul>
                               </li>";
                     } else {
+                        echo "<li><a href='".base_url()."'>Beranda</i></a>";
                         $botm = $this->model_utama->mainmenu();
                         foreach ($botm->result_array() as $row) {
                             $dropdown = $this->model_utama->submenu($row['id_main'])->num_rows();

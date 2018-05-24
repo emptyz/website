@@ -56,17 +56,34 @@ class Model_hubungi extends CI_model {
     function kirim_Pesan() {
         $nama = $this->input->post('a');
         $email = $this->input->post('b');
-        $subjek = $this->input->post('c');
-        $pesan = $this->input->post('d');
+        $telepon = $this->input->post('c');
+        $subjek = $this->input->post('d');
+        $kategori = $this->input->post('e');
+        //$datapendukung = $this->input->post('f');
+        $pesan = $this->input->post('g');
+        $ip_address = $this->input->post('h');
         $datadb = array('nama' => $nama,
             'email' => $email,
+            'telepon' => $telepon,
             'subjek' => $subjek,
+            'kategori' => $kategori,
+            //'file_pendukung' => $datapendukung,
             'pesan' => $pesan,
+            'ip_address' => $ip_address,
             'tanggal' => date('Y-m-d'));
         $this->db->insert('hubungi', $datadb);
     }
-
-    function updateread($id) {
+    
+    function kirimpesan(){
+                $nama = $this->input->post('a');
+        $email = $this->input->post('b');
+        $telepon = $this->input->post('c');
+        $subjek = $this->input->post('d');
+        $kategori = $this->input->post('e');
+        $pesan = $this->input->post('g');
+        return $this->db->query("INSERT INTO hubungi (nama, email, telepon, subjek, kategori, pesan, tanggal) VALUES ('$nama', '$email', '$telepon', '$subjek', '$kategori', '$pesan', date('Y-m-d'))");
+    }
+                function updateread($id) {
         return $this->db->query("UPDATE hubungi SET is_read=1 WHERE id_hubungi='$id'");
     }
 

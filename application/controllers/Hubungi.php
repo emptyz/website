@@ -25,7 +25,11 @@ class Hubungi extends CI_Controller {
                 $cap = create_captcha($vals);
                 $data['image'] = $cap['image'];
                 $this->session->set_userdata('mycaptcha', $cap['word']);
-                $this->template->load(template() . '/template', template() . '/view_hubungi', $data);
+                $this->session->set_flashdata('warning', 'Sukses mengirim pesan!');
+                $this->template->load(template() . '/template', template() . '/view_kontak', $data);
+            } else {
+                 $this->session->set_flashdata('warning', 'Gagal mengirim pesan!');
+                 redirect('hubungi');
             }
         } else {
             $data['title'] = 'Hubungi Kami';
@@ -45,7 +49,7 @@ class Hubungi extends CI_Controller {
             $cap = create_captcha($vals);
             $data['image'] = $cap['image'];
             $this->session->set_userdata('mycaptcha', $cap['word']);
-            $this->template->load(template() . '/template', template() . '/view_hubungi', $data);
+            $this->template->load(template() . '/template', template() . '/view_kontak', $data);
         }
     }
 
