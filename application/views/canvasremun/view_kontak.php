@@ -119,7 +119,7 @@
                         <div class="fbox-icon">
                             <a href="#"><i class="icon-map-marker2"></i></a>
                         </div>
-                        <h3>Our Headquarters<span class="subtitle">Melbourne, Australia</span></h3>
+                        <h3>Ruang Remunerasi<span class="subtitle">Gedung BAA-APSI, Universitas Sebelas Maret</span></h3>
                     </div>
                 </div>
 
@@ -128,25 +128,25 @@
                         <div class="fbox-icon">
                             <a href="#"><i class="icon-phone3"></i></a>
                         </div>
-                        <h3>Speak to Us<span class="subtitle">(123) 456 7890</span></h3>
+                        <h3>Telepon<span class="subtitle">(0271) 456 7890</span></h3>
                     </div>
                 </div>
 
                 <div class="col-lg-3 col-md-6 bottommargin clearfix">
                     <div class="feature-box fbox-center fbox-bg fbox-plain">
                         <div class="fbox-icon">
-                            <a href="#"><i class="icon-skype2"></i></a>
+                            <a href="#"><i class="icon-email"></i></a>
                         </div>
-                        <h3>Make a Video Call<span class="subtitle">CanvasOnSkype</span></h3>
+                        <h3>Email<span class="subtitle">remunerasi@uns.ac.id</span></h3>
                     </div>
                 </div>
 
                 <div class="col-lg-3 col-md-6 bottommargin clearfix">
                     <div class="feature-box fbox-center fbox-bg fbox-plain">
                         <div class="fbox-icon">
-                            <a href="#"><i class="icon-twitter2"></i></a>
+                            <a href="#"><i class="icon-chat"></i></a>
                         </div>
-                        <h3>Follow on Twitter<span class="subtitle">2.3M Followers</span></h3>
+                        <h3>WhatsApp<span class="subtitle">0821122222</span></h3>
                     </div>
                 </div>
 

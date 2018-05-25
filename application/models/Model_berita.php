@@ -170,7 +170,6 @@ class Model_berita extends CI_model{
             if ($hasil['file_name']==''){
                 $datadb = array('id_kategori'=>$this->db->escape_str($this->input->post('b')),
                                 'username'=>$this->db->escape_str($this->input->post('u')),
-                                'editor'=>$this->db->escape_str($this->input->post('editor')),
                                 'judul'=>$this->db->escape_str($this->input->post('a')),
                                 'judul_seo'=>seo_title($this->input->post('a')),
                                 'headline'=>$this->db->escape_str($this->input->post('c')),
@@ -185,7 +184,6 @@ class Model_berita extends CI_model{
             }else{
                 $datadb = array('id_kategori'=>$this->db->escape_str($this->input->post('b')),
                                 'username'=>$this->db->escape_str($this->input->post('u')),
-                                'editor'=>$this->db->escape_str($this->input->post('editor')),
                                 'judul'=>$this->db->escape_str($this->input->post('a')),
                                 'judul_seo'=>seo_title($this->input->post('a')),
                                 'headline'=>$this->db->escape_str($this->input->post('c')),
@@ -202,6 +200,39 @@ class Model_berita extends CI_model{
         $this->db->update('web_berita',$datadb);
     }
 
+    function berita_update(){
+        $config['upload_path'] = 'asset/foto_berita/';
+        $config['allowed_types'] = 'gif|jpg|png|JPG|JPEG';
+        $config['max_size'] = '3000'; // kb
+        $this->load->library('upload', $config);
+        $this->upload->do_upload('e');
+        $hasil=$this->upload->data();
+            if ($this->input->post('j')!=''){
+                $tag_seo = $this->input->post('j');
+                $tag=implode(',',$tag_seo);
+            }else{
+                $tag = '';
+            }
+        $id_kategori = $this->db->escape_str($this->input->post('b'));
+        $editor = $this->db->escape_str($this->input->post('editor'));
+        $judul = $this->db->escape_str($this->input->post('a'));
+        $judul_seo = seo_title($this->input->post('a'));
+        $headline = $this->db->escape_str($this->input->post('c'));
+        $isi_berita = $this->input->post('d');
+        $is_aktif = $this->input->post('is_aktif');
+        $is_publik = $this->input->post('is_publik');
+        $id_berita = $this->input->post('id');
+        $gambar = $hasil['file_name'];
+        
+        return $this->db->query("UPDATE web_berita SET id_kategori='$id_kategori' , editor='$editor', judul='$judul', judul_seo='$judul_seo', headline='$headline', isi_berita='$isi_berita', is_aktif='$is_aktif', is_publik='$is_publik' 'gambar'='$gambar' WHERE id_berita='$id_berita'");
+        
+        
+        
+        
+        
+        
+    }
+    
     function list_berita_delete($id){
         return $this->db->query("DELETE FROM web_berita where id_berita='$id'");
     }

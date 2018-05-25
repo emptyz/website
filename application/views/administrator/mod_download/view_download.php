@@ -10,6 +10,7 @@
                       <tr>
                         <th style='width:20px'>No</th>
                         <th>Judul</th>
+                        <th>Kategori</th>
                         <th>Link</th>
                         <th>Hits</th>
                         <th>Tanggal</th>
@@ -23,6 +24,7 @@
                     $tgl_Posting = tgl_indo($row['tgl_posting']);
                     echo "<tr><td>$no</td>
                               <td>$row[judul]</td>
+                              <td>$row[kategori]</td>
                               <td><a title='$row[nama_file]' target='_BLANK' href='".base_url()."download/file/$row[nama_file]'>Download</a></td>
                               <td>$row[hits] Kali</td>
                               <td>$tgl_Posting</td>

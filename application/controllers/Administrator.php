@@ -239,8 +239,12 @@ class Administrator extends CI_Controller {
         cek_session_opadmin();
         $id = $this->uri->segment(3);
         if (isset($_POST['submit'])) {
-            $this->model_berita->list_berita_update();
-            redirect('administrator/berita');
+            $updateberita = $this->model_berita->berita_update();
+            if ($updateberita){
+                redirect('administrator/berita');
+            } else {
+                echo "gagal" ;
+           }
         } else {
             $data['tag'] = $this->model_berita->tag_berita();
             $data['record'] = $this->model_berita->kategori_berita();

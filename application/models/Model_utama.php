@@ -241,8 +241,8 @@ class Model_utama extends CI_model {
         return $this->db->query("SELECT a.*, b.NAMA AS nama_pegawai, c.* FROM web_berita a LEFT JOIN remunerasi_pegawai b ON a.username=b.NIP LEFT JOIN web_kategori c ON a.id_kategori=c.id_kategori WHERE a.is_aktif=1 AND is_publik=1 ORDER BY dibaca DESC limit 4 ");
     }
     
-    function berita_sdm_satu(){
-        return $this->db->query("SELECT a.*, b.NAMA AS nama_pegawai, c.* FROM web_berita a LEFT JOIN remunerasi_pegawai b ON a.username=b.NIP LEFT JOIN web_kategori c ON a.id_kategori=c.id_kategori where a.id_kategori='33' AND a.is_aktif=1 AND is_publik=1 ORDER BY id_berita DESC limit 1");
+    function berita_sdm_headline(){
+        return $this->db->query("SELECT a.*, b.NAMA AS nama_pegawai, c.* FROM web_berita a LEFT JOIN remunerasi_pegawai b ON a.username=b.NIP LEFT JOIN web_kategori c ON a.id_kategori=c.id_kategori where a.id_kategori='33' AND a.is_aktif=1 AND is_publik=1 AND headline='Y' ORDER BY id_berita DESC limit 5");
     }
     
     function list_berita($idkat, $limit){
@@ -251,6 +251,10 @@ class Model_utama extends CI_model {
     
     function ambiltag(){
         return $this->db->query("SELECT * FROM web_tag");
+    }
+    
+        function download($kat) {
+        return $this->db->query("SELECT * FROM web_download WHERE kategori LIKE '%$kat' ORDER BY id_download DESC");
     }
     
     

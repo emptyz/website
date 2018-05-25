@@ -23,7 +23,7 @@
                         </div>
                     </div>
                 </div>
-                <!--<div class="swiper-slide" style="background-image: url('<?php //echo base_url();    ?>template/<?php //echo template();    ?>/images/slider/swiper/3.jpg'); background-position: center top;">
+                <!--<div class="swiper-slide" style="background-image: url('<?php //echo base_url();          ?>template/<?php //echo template();          ?>/images/slider/swiper/3.jpg'); background-position: center top;">
                     <div class="container clearfix">
                         <div class="slider-caption">
                             <h2 data-caption-animate="fadeInUp">Great Performance</h2>
@@ -55,23 +55,31 @@
             <!-- Pembayaran Remunerasi
     ============================================= -->
             <div class="container clearfix  contentcolor rounded">
-                <div id="remunerasi" class="fancy-title title-center title-dotted-border">
-                    <h2>Remunerasi</h2>
-                </div>
+                <section id="page-title">
+
+                    <div id="remunerasi" class="fancy-title title-center title-dotted-border">
+                        <h2>Remunerasi</h2>
+                    </div>
+
+                </section>
+
 
                 <div class="row ">
                     <div class="col-lg-6 col-md-6">
-                        <div id="home-recent-news">
+                        <!-- Posts
+============================================= -->
+                        <div id="oc-posts" class="owl-carousel posts-carousel carousel-widget"  data-margin="20" data-nav="true" data-pagi="false" data-items-md="1" data-items-lg="1" data-items-xl="1"  data-autoplay="4000" data-loop="true">
+
                             <?php
-                            $berita = $this->model_utama->berita_sdm_satu();
+                            $berita = $this->model_utama->berita_sdm_headline();
                             foreach ($berita->result_array() as $row):
                                 $isi_berita = strip_tags($row['isi_berita']);
                                 $isi = substr($isi_berita, 0, 180);
                                 $isi = substr($isi_berita, 0, strrpos($isi, " "));
                                 $tanggal = tgl_indo($row['tanggal']);
                                 ?>
-                                <div id="posts" class="small-thumbs">
-                                    <div class="entry clearfix">
+                                <div class="oc-item">
+                                    <div class="ipost clearfix">
                                         <!-- Entry Image
                                         ============================================= -->
                                         <div class="entry-image">
@@ -82,36 +90,40 @@
                                             ?>
                                         </div><!-- .entry-image end -->
                                         <div class="entry-title">
-                                            <h2><?php
+                                            <h3><?php
                                                 echo "<a href='" . base_url() . "berita/detail/$row[judul_seo]'>";
                                                 echo $row['judul'];
-                                                ?></a></h2>
+                                                ?></a></h3>
                                         </div>
                                         <ul class="entry-meta clearfix">
                                             <li><i class="icon-calendar3"></i> <?php echo $tanggal; ?></li>
-                                            <li><?php echo "<a href='" . base_url() . "berita/kategori/$row[kategori_seo]'><i class='icon-book'></i>$row[nama_kategori]</a>" ?></li>
+                                            <li><?php echo "<a href='" . base_url() . "berita/kategori/$row[kategori_seo]'><i class='icon-book'></i>$row[nama_kategori]</a>" ?></a></li>
                                             <li><i class="icon-user"></i> <?php echo $row['nama_pegawai']; ?></li>
-
                                         </ul>
                                         <div class="entry-content">
-                                            <p><?php
-                                                echo $isi . '...<br>';
-                                                echo "<a href='" . base_url() . "berita/detail/$row[judul_seo]'>Baca Selengkapnya..</a>";
-                                                ?></p>
+                                            <p><?php echo $isi; ?></p>
                                         </div>
                                     </div>
                                 </div>
                                 <?php
                             endforeach;
                             ?>
-                        </div>
+
+
+
+                        </div><!-- #posts end -->
+
                     </div>
 
                     <div class="col-lg-6 col-md-6">
                         <div id="home-recent-news">
+                            <div class="title-block">
+                                <h4>Pembayaran</h4>
+
+                            </div>
                             <?php
                             $no = 1;
-                            $berita = $this->model_utama->list_berita(33, 4);
+                            $berita = $this->model_utama->list_berita(33, 5);
                             foreach ($berita->result_array() as $row):
                                 if ($no != 1) {
                                     $isi_berita = strip_tags($row['isi_berita']);
@@ -143,11 +155,10 @@
                     </div>
                 </div>
 
-                <div class="divider divider-short divider-center"></div>
 
                 <!-- Pagination
                 ============================================= -->
-                <?php echo "<a href='" . base_url() . "berita/kategori/remunerasi' class='button button-rounded button-reveal button-large button-dark tright float-right'><i class='icon-line-arrow-right'></i><span>Remunerasi Selengkapnya</span></a>" ?>
+                <?php echo "<a href='" . base_url() . "berita/kategori/remunerasi' class='button button-rounded button-reveal button-medium button-dark tright float-right'><i class='icon-line-arrow-right'></i><span>Selengkapnya</span></a>" ?>
                 <!-- .pager end -->
                 <a href="#" data-scrollto="#kinerja" class="one-page-arrow "><i class="icon-angle-down infinite animated fadeInDown"></i></a>
 
@@ -278,7 +289,7 @@
                                     <div class="divider divider-short divider-center"></div>
                                     <!-- Pagination
                                     ============================================= -->
-                                    <?php echo "<a href='" . base_url() . "berita/kategori/kinerja' class='button button-rounded button-reveal button-large button-dark tright float-right'><i class='icon-line-arrow-right'></i><span>Kinerja Selengkapnya</span></a>" ?>
+                                    <?php echo "<a href='" . base_url() . "berita/kategori/kinerja' class='button button-rounded button-reveal button-medium button-dark tright float-right'><i class='icon-line-arrow-right'></i><span>Selengkapnya</span></a>" ?>
                                     <!-- .pager end -->
 
                                 </div>
@@ -430,7 +441,7 @@
 
                         <!-- Posts
                         ============================================= -->
-                        <div id="oc-posts" class="owl-carousel posts-carousel carousel-widget bg-blue"  data-margin="20" data-nav="true" data-pagi="false" data-items-md="1" data-items-lg="1" data-items-xl="1">
+                        <div id="oc-posts" class="owl-carousel posts-carousel carousel-widget bg-blue"  data-margin="20" data-nav="true" data-pagi="false" data-items-md="1" data-items-lg="1" data-items-xl="1" data-autoplay="4000" data-loop="true">
 
                             <?php
                             $berita = $this->model_utama->list_berita(31, 6);
@@ -478,23 +489,50 @@
                             <?php echo "<a href='" . base_url() . "berita/kategori/pengembangan-sdm' class='button button-rounded button-reveal button-medium  button-dark tright float-right'><i class='icon-line-arrow-right'></i><span>Selengkapnya</span></a>" ?>
                         </div>
                     </div>
-                    <div class="col-6">
-                        <div class="title-block">
+                    <div class="col-6 peraturanbg rounded dark  ">
+                        <div class="title-block title-block-atas">
                             <h4>Peraturan</h4>                          
                         </div>
                         <div id="faqs" class="faqs">
 
                             <div class="toggle faq">
+
                                 <div class="togglet"><i class="toggle-closed icon-book"></i><i class="toggle-open icon-book3"></i>Peraturan Rektor</div>
-                                <div class="togglec">isi peraturan</div>
+
+                                <div class="togglec"> 
+                                    <?php
+                                    $kat = "peraturan-rektor";
+                                    $download = $this->model_utama->download($kat);
+                                    foreach ($download->result_array() as $row):
+                                        echo "<i class='toggle-closed icon-arrow-right'></i><a title='$row[nama_file]' target='_BLANK' href='" . base_url() . "download/file/$row[nama_file]'>$row[judul]</a><br>";
+                                    endforeach;
+                                    ?>
+                                </div>
+
                             </div>
                             <div class="toggle faq">
                                 <div class="togglet"><i class="toggle-closed icon-book"></i><i class="toggle-open icon-book3"></i>Edaran Rektor</div>
-                                <div class="togglec">isi peraturan</div>
+                                <div class="togglec">
+                                    <?php
+                                    $kat = "edaran-rektor";
+                                    $download = $this->model_utama->download($kat);
+                                    foreach ($download->result_array() as $row):
+                                        echo "<i class='toggle-closed icon-arrow-right'></i><a title='$row[nama_file]' target='_BLANK' href='" . base_url() . "download/file/$row[nama_file]'>$row[judul]</a><br>";
+                                    endforeach;
+                                    ?>
+                                </div>
                             </div>
                             <div class="toggle faq">
                                 <div class="togglet"><i class="toggle-closed icon-book"></i><i class="toggle-open icon-book3"></i>Edaran Wakil Rektor</div>
-                                <div class="togglec">isi peraturan</div>
+                                <div class="togglec">
+                                    <?php
+                                    $kat = "edaran-wakilrektor";
+                                    $download = $this->model_utama->download($kat);
+                                    foreach ($download->result_array() as $row):
+                                        echo "<i class='toggle-closed icon-arrow-right'></i><a title='$row[nama_file]' target='_BLANK' href='" . base_url() . "download/file/$row[nama_file]'>$row[judul]</a><br>";
+                                    endforeach;
+                                    ?>
+                                </div>
                             </div>
 
 
@@ -555,54 +593,25 @@
                     </div>
                     <div class="col-lg-4 col-md-4">
                         <div class="title-block">
-                            <h4>Agenda</h4>
-                            <span>Agenda Kegiatan UPSDM dan Remunerasi</span>
+                            <h4>Link Terkait</h4>
+                            <span>Link berkaitan UPSDM & Remunerasi</span>
                         </div>
-
-                        <div id="posts" class="events">
-                            <?php
-                            $agenda = $this->model_utama->agenda_hari_ini(1);
-                            foreach ($agenda->result_array() as $record) {
-                                $isi_berita = strip_tags($record['isi_agenda']);
-                                ?>
-
-                                <div class="entry clearfix">
-                                    <div class="entry-c">
-                                        <div class="entry-title">
-                                            <h4><?php echo "<a href= '" . base_url() . "agenda/detail/$record[tema_seo]'><b>$record[tema]</b></a>"; ?></h4>
-                                        </div>
-                                        <ul class="entry-meta clearfix">
-                                            <?php
-                                            $current = strtotime(date("Y-m-d"));
-                                            $date = strtotime($record['tgl_mulai']);
-
-                                            $datediff = $date - $current;
-                                            $difference = floor($datediff / (60 * 60 * 24));
-                                            if ($difference == 0) {
-                                                echo '<li><span class="badge badge-success">Hari Ini</span></li>';
-                                            } else if ($difference > 1) {
-                                                echo '<li><span class="badge badge-info">Akan datang</span></li>';
-                                            } else if ($difference > 0) {
-                                                echo '<li><span class="badge badge-warning">Besok</span></li>';
-                                            } else if ($difference < -1) {
-                                                echo '<li><span class="badge badge-danger">Telah Berlalu</span></li>';
-                                            } else {
-                                                echo '<li><span class="badge badge-danger">Kemarin</span></li>';
-                                            }
-                                            ?>
-
-                                            <li><a href="#"><i class="icon-map-marker2"></i> <?php echo $record['tempat']; ?></a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <?php echo "<a href='" . base_url() . "agenda' class='button button-rounded button-reveal button-large button-dark tright float-right'><i class='icon-line-arrow-right'></i><span>Semua Agenda</span></a>" ?>
-                                <?php
-                            }
-                            ?>
-
+                        <div class="widget_links">
+                            <ul>
+                                <li>
+                                    <a href="htpp://siakad.uns.ac.id">Siakad UNS</a>
+                                </li>
+                                <li>
+                                    <a href="htpp://iris1103.uns.ac.id">IRIS1103</a>
+                                </li>
+                                <li>
+                                    <a href="http://perencanaan.uns.ac.id">Rensi UNS</a>
+                                </li>
+                                <li>
+                                    <a href="http://uns.ac.id">Universitas Sebelas Maret</a>
+                                </li>
+                            </ul>
                         </div>
-
-
 
                     </div>
 

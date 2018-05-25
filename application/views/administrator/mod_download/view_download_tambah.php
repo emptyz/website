@@ -12,7 +12,14 @@
                   <tbody>
                     <input type='hidden' name='id' value=''>
                     <tr><th width='120px' scope='row'>Judul</th>    <td><input type='text' class='form-control' name='a' required></td></tr>
-                    <tr><th width='120px' scope='row'>Cari File</th>    <td><input type='file' class='form-control' name='b'></td></tr>
+                    <tr><th scope='row'>Kategori</th>               <td><select name='kategori' class='form-control' required>
+                                                                            <option value='' selected>- Pilih Kategori -</option>
+                                                                                <option value='peraturan-rektor'>Peraturan Rektor</option>
+                                                                                <option value='edaran-rektor'>Edaran Rektor</option>
+                                                                                <option value='edaran-wakilrektor'>Edaran Wakil Rektor</option>
+                                                                                <option value='lain'>Lain-lain</option>
+                                                                            
+<tr><th width='120px' scope='row'>Cari File</th>    <td><input type='file' class='form-control' name='b'></td></tr>
                   </tbody>
                   </table>
                 </div>

@@ -22,6 +22,7 @@
                 <th>Kategori</th>
                 <th>Dibaca</th>
                 <th>Status</th>
+                <th>Head</th>
                 <th>Tgl Posting</th>
                 <th style='width:50px'>Action</th>
                 </tr>
@@ -43,6 +44,7 @@
                               <td>$kategori</td>
                               <td>$row[dibaca] Kali</td>
                                   <td>Publish</td>
+                                  <td>$row[headline]</td>
                               <td>$tgl_posting</td>
                               <td><center>
                                 <a class='btn btn-success btn-xs' title='Edit Data' href='" . base_url() . "administrator/edit_berita/$row[id_berita]'><span class='glyphicon glyphicon-edit'></span></a>
@@ -58,6 +60,7 @@
                               <td>$kategori</td>
                               <td>$row[dibaca] Kali</td>
                                   <td>Pending</td>
+                                  <td>$row[headline]</td>
                               <td>$tgl_posting</td>
                               <td><center>
                                 <a class='btn btn-success btn-xs' title='Edit Data' href='" . base_url() . "administrator/edit_berita/$row[id_berita]'><span class='glyphicon glyphicon-edit'></span></a>

@@ -22,6 +22,8 @@ class Download extends CI_Controller {
 	}
 
 	function file(){
+                    $this->session->set_userdata('url',current_url());
+        cek_session_all();
 		$name = $this->uri->segment(3);
 		$this->model_utama->updatehits($name);
 		$data = file_get_contents("asset/files/".$name);

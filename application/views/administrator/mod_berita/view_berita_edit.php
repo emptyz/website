@@ -30,9 +30,9 @@
                                                                             $this->session->set_userdata('gambar', $rows['gambar']);
                     echo "</td></tr>
                     <tr><th scope='row'>Headline</th>               <td>"; if ($rows['headline']=='Y'){ echo "<input type='radio' name='c' value='Y' checked> Ya &nbsp; <input type='radio' name='c' value='N'> Tidak"; }else{ echo "<input type='radio' name='c' value='Y'> Ya &nbsp; <input type='radio' name='c' value='N' checked> Tidak"; } echo "</td></tr>
-                        <tr><th scope='row'>Status Berita</th>               <td>"; if ($rows['is_aktif']=='1'){ echo "<input type='radio' name='is_aktif' value='1' checked> Publish &nbsp; <input type='radio' name='is_aktif' value='0'> Draft"; }else{ echo "<input type='radio' name='is_aktif' value='1'> Publish &nbsp; <input type='radio' name='is_aktif' value='0' checked> Draft"; } echo "</td></tr>
+                    <tr><th scope='row'>Status Berita</th>               <td>"; if ($rows['is_aktif']=='1'){ echo "<input type='radio' name='is_aktif' value='1' checked> Publish &nbsp; <input type='radio' name='is_aktif' value='0'> Draft"; }else{ echo "<input type='radio' name='is_aktif' value='1'> Publish &nbsp; <input type='radio' name='is_aktif' value='0' checked> Draft"; } echo "</td></tr>
                     <tr><th scope='row'>Privacy Berita</th>               <td>"; if ($rows['is_publik']=='1'){ echo "<input type='radio' name='is_publik' value='1' checked> Publik &nbsp; <input type='radio' name='is_publik' value='0'> Private"; }else{ echo "<input type='radio' name='is_publik' value='1'> Publik &nbsp; <input type='radio' name='is_publik' value='0' checked> Private"; } echo "</td></tr>
-<tr><th scope='row'>Isi Berita</th>             <td><textarea id='editor1' class='form-control' name='d' style='height:320px' required>$rows[isi_berita]</textarea></td></tr>
+                    <tr><th scope='row'>Isi Berita</th>             <td><textarea id='editor1' class='form-control' name='d' style='height:320px' required>$rows[isi_berita]</textarea></td></tr>
                     <tr><th scope='row'>Ganti Gambar</th>                 <td><input type='file' class='form-control' name='e'>";
                                                                                if ($rows['gambar'] != ''){ echo "<i style='color:red'>Lihat Gambar Saat ini : </i><a target='_BLANK' href='".base_url()."asset/foto_berita/$rows[gambar]'>$rows[gambar]</a> || <a href='" . base_url() . "administrator/delete_gambar_berita/$rows[id_berita]' onclick=\"return confirm('Apa anda yakin untuk hapus Data ini?')\"'>Hapus Gambar</a>"; } echo "</td></tr>
                     <tr><th scope='row'>Tag</th>                    <td><div class='checkbox-scroll'>";
@@ -41,7 +41,7 @@
                                                                                 $_ck = (array_search($tag['tag_seo'], $_arrNilai) === false)? '' : 'checked';
                                                                                 echo "<span style='display:block;'><input type=checkbox value='$tag[tag_seo]' name=j[] $_ck>$tag[nama_tag] &nbsp; &nbsp; &nbsp; </span>";
                                                                             }
-                    echo "</div></td></tr><input type='hidden' name='u' value='".$rows['username']."'>";
+                    echo "</div></td></tr>";
                     echo " <input type='hidden' name='editor' value='".$this->session->nip."'>";
                     echo "
                   </tbody>
