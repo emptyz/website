@@ -32,7 +32,7 @@ class Berita extends CI_Controller {
     }
 
     public function detail() {
-        $this->session->set_userdata('url',current_url());
+        $this->session->set_userdata('url', current_url());
         cek_session_all();
         $ids = $this->uri->segment(3);
         $dat = $this->db->query("SELECT * FROM web_berita where judul_seo='$ids' OR id_berita='$ids'");
@@ -82,7 +82,7 @@ class Berita extends CI_Controller {
         $jumlah = $this->model_utama->hitungberitakategori($row->id_kategori)->num_rows();
         $config['base_url'] = base_url() . 'berita/kategori/' . $row->kategori_seo;
         $config['total_rows'] = $jumlah;
-        
+
         $config['per_page'] = 7;
         if ($this->uri->segment('4') != '') {
             $dari = $this->uri->segment('4');
@@ -97,7 +97,7 @@ class Berita extends CI_Controller {
         }
         $this->pagination->initialize($config);
         $str_links = $this->pagination->create_links();
-        $data['links'] = explode('&nbsp;',$str_links );
+        $data['links'] = explode('&nbsp;', $str_links);
         $data['title'] = $row->nama_kategori;
         $this->template->load(template() . '/template', template() . '/view_kategori', $data);
     }
@@ -116,31 +116,30 @@ class Berita extends CI_Controller {
             redirect('berita/detail/' . $row['judul_seo'] . '#listcomment');
         }
     }
-    
-    function cari(){
-        $keyword = cetak($this->input->post('cari'));
-            $data['title'] = 'Pencarian keyword : ' . $keyword;
-            $data['pencarianberita'] = $this->model_utama->semua_berita_cari(0, 7, $keyword);
-            $jumlah = $this->model_utama->hitungberita()->num_rows();
-            $config['base_url'] = base_url() . 'berita/cari';
-            $config['total_rows'] = $jumlah;
-            $config['per_page'] = 10;
-            if ($this->uri->segment('3') != '') {
-                $dari = $this->uri->segment('3');
-            } else {
-                $dari = 0;
-            }
 
-            if (is_numeric($dari)) {
-                $data['berita'] = $this->model_utama->semua_berita($dari, $config['per_page']);
-            } else {
-                redirect('berita');
-            }
-            $this->pagination->initialize($config);
-                    $str_links = $this->pagination->create_links();
-        $data['links'] = explode('&nbsp;',$str_links );
-            $this->template->load(template() . '/template', template() . '/view_semua_berita', $data);
+    function cari() {
+        $keyword = cetak($this->input->post('cari'));
+        $data['title'] = 'Pencarian keyword : ' . $keyword;
+        $data['pencarianberita'] = $this->model_utama->semua_berita_cari(0, 7, $keyword);
+        $jumlah = $this->model_utama->hitungberita()->num_rows();
+        $config['base_url'] = base_url() . 'berita/cari';
+        $config['total_rows'] = $jumlah;
+        $config['per_page'] = 10;
+        if ($this->uri->segment('3') != '') {
+            $dari = $this->uri->segment('3');
+        } else {
+            $dari = 0;
+        }
+
+        if (is_numeric($dari)) {
+            $data['berita'] = $this->model_utama->semua_berita($dari, $config['per_page']);
+        } else {
+            redirect('berita');
+        }
+        $this->pagination->initialize($config);
+        $str_links = $this->pagination->create_links();
+        $data['links'] = explode('&nbsp;', $str_links);
+        $this->template->load(template() . '/template', template() . '/view_semua_berita', $data);
     }
-    
 
 }

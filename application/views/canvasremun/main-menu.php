@@ -17,7 +17,7 @@
 
             <!-- Primary Navigation
             ============================================= -->
-            <nav id="primary-menu" class="">
+            <nav id="primary-menu">
 
                 <ul>
                     <?php
@@ -150,7 +150,7 @@
                           </li>";
                             }
                         }
-                        echo "<li><a href='#modal-login-form' data-lightbox='inline' class='header-login-trigger'>Login Remunerasi <i class='icon-line2-login'></i></a></li";
+                        echo "<li><a href='#modal-login-form' data-lightbox='inline' class='header-login-trigger'>Login Remunerasi <i class='icon-line2-login'></i></a></li>";
                     }
                     ?>
 
@@ -201,7 +201,7 @@
                 <div class="center">
                     <hr>
                     <h4 style="margin-bottom: 15px;">Atau login dengan:</h4>
-                    <a href="#" class="button button-rounded si-facebook si-colored">SSO UNS</a>
+                    <a href="#" ><img src="<?php echo base_url().'template/canvasremun/images/sso.jpg'; ?>" style="height: 40%;width: 40%;"></a>
                 </div>
             </form>
         </div>

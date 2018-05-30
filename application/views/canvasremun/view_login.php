@@ -39,8 +39,8 @@
                 <br>
 
                 <div class="center">
-                    <h4 style="margin-bottom: 15px;">Atau Login:</h4>
-                    <a href="#" class="button button-rounded si-facebook si-colored">SSO UNS</a>
+                    <h4 style="margin-bottom: 15px;">Atau login dengan:</h4>
+                    <a href="#" ><img src="<?php echo base_url().'template/canvasremun/images/sso.jpg'; ?>" style="height: 40%;width: 40%;"></a>
                 </div>
             </div>
             </div>

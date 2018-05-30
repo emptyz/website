@@ -23,7 +23,7 @@
                         </div>
                     </div>
                 </div>
-                <!--<div class="swiper-slide" style="background-image: url('<?php //echo base_url();          ?>template/<?php //echo template();          ?>/images/slider/swiper/3.jpg'); background-position: center top;">
+                <!--<div class="swiper-slide" style="background-image: url('<?php //echo base_url();           ?>template/<?php //echo template();           ?>/images/slider/swiper/3.jpg'); background-position: center top;">
                     <div class="container clearfix">
                         <div class="slider-caption">
                             <h2 data-caption-animate="fadeInUp">Great Performance</h2>
@@ -55,13 +55,14 @@
             <!-- Pembayaran Remunerasi
     ============================================= -->
             <div class="container clearfix  contentcolor rounded">
-                <section id="page-title">
-
-                    <div id="remunerasi" class="fancy-title title-center title-dotted-border">
-                        <h2>Remunerasi</h2>
+                <section id="judul" class="rounded">
+                    <div class="container clearfix">
+                        <div id="remunerasi" class="fancy-title title-center title-dotted-border ">
+                            <?php echo "<h2><a href='" . base_url() . "berita/kategori/remunerasi'>Remunerasi</a></h2>"; ?>
+                        </div>
                     </div>
-
                 </section>
+
 
 
                 <div class="row ">
@@ -98,7 +99,7 @@
                                         <ul class="entry-meta clearfix">
                                             <li><i class="icon-calendar3"></i> <?php echo $tanggal; ?></li>
                                             <li><?php echo "<a href='" . base_url() . "berita/kategori/$row[kategori_seo]'><i class='icon-book'></i>$row[nama_kategori]</a>" ?></a></li>
-                                            <li><i class="icon-user"></i> <?php echo $row['nama_pegawai']; ?></li>
+                                            <li><i class="icon-folder-open"></i> Dibaca <?php echo $row['dibaca'] ?>x</li>                                        
                                         </ul>
                                         <div class="entry-content">
                                             <p><?php echo $isi; ?></p>
@@ -115,11 +116,10 @@
 
                     </div>
 
-                    <div class="col-lg-6 col-md-6">
-                        <div id="home-recent-news">
-                            <div class="title-block">
+                    <div class="col-lg-6 col-md-6 fotobg">
+                        <div id="home-recent-news" >
+                            <div class="title-block bgcolor">
                                 <h4>Pembayaran</h4>
-
                             </div>
                             <?php
                             $no = 1;
@@ -142,7 +142,7 @@
                                             <ul class="entry-meta">
                                                 <li><i class="icon-calendar3"></i> <?php echo $tanggal; ?></li>
                                                 <li><?php echo "<a href='" . base_url() . "berita/kategori/$row[kategori_seo]'><i class='icon-book'></i>$row[nama_kategori]</a>" ?></a></li>
-
+                                                <li><i class="icon-folder-open"></i> Dibaca <?php echo $row['dibaca'] ?>x</li>
                                             </ul>
                                         </div>
                                     </div>
@@ -168,9 +168,13 @@
             <!-- Kinerja Remunerasi
             ============================================= -->
             <div class="container clearfix contentcolor">
-                <div id="kinerja" class="fancy-title title-center title-dotted-border ">
-                    <h2>Kinerja</h2>
-                </div>
+                <section id="judul" class="rounded">
+                    <div class="container clearfix">
+                        <div id="kinerja" class="fancy-title title-center title-dotted-border ">
+                            <?php echo "<h2><a href='" . base_url() . "berita/kategori/kinerja'>Kinerja</a></h2>"; ?>
+                        </div>
+                    </div>
+                </section>
                 <div class="tabs clearfix tabs-justify" id="tab-3">
 
                     <ul class="tab-nav tab-nav2 clearfix">
@@ -431,9 +435,13 @@
             <!-- Pengembangan SDM
                   ============================================= -->
             <div class="container clearfix contentcolor contentcolor">
-                <div id="sdm" class="fancy-title title-center title-dotted-border">
-                    <h2>Pengembangan SDM</h2>
-                </div>
+                <section id="judul" class="rounded">
+                    <div class="container clearfix">
+                        <div id="sdm" class="fancy-title title-center title-dotted-border ">
+                            <?php echo "<h2><a href='" . base_url() . "berita/kategori/pengembangan-sdm'>Pengembangan SDM</a></h2>"; ?>
+                        </div>
+                    </div>
+                </section>
 
 
                 <div class="row">
@@ -490,7 +498,7 @@
                         </div>
                     </div>
                     <div class="col-6 peraturanbg rounded dark  ">
-                        <div class="title-block title-block-atas">
+                        <div class="title-block title-block-atas ">
                             <h4>Peraturan</h4>                          
                         </div>
                         <div id="faqs" class="faqs">
@@ -560,7 +568,7 @@
                 ============================================= -->
                 <div class="row">
                     <div class="col-lg-8 col-md-8">
-                        <div class="title-block">
+                        <div class="title-block bgcolor">
                             <h4>Frequently Asked Questions</h4>
                             <span>Beberapa pertanyaan mengenai UPSDM dan Remunerasi</span>
                         </div>
@@ -592,7 +600,7 @@
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-4">
-                        <div class="title-block">
+                        <div class="title-block bgcolor">
                             <h4>Link Terkait</h4>
                             <span>Link berkaitan UPSDM & Remunerasi</span>
                         </div>
