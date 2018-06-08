@@ -55,6 +55,7 @@ class Auth extends CI_Controller {
             $row = $cek->row_array();
             $total = $cek->num_rows();
             if ($total > 0) {
+
                 $this->session->set_userdata('upload_image_file_manager', true);
                 $this->session->set_userdata('islogin', true);
                 $this->session->set_userdata(array('nama' => $row['NAMA'],
@@ -62,6 +63,8 @@ class Auth extends CI_Controller {
                     'foto' => $row['foto'],
                     'level' => $row['level']));
                 //echo $this->session->userdata('url');
+                $_SESSION['sUsr'] = $this->session->userdata('NIP');
+                $_SESSION['sHak'] = $this->session->level;
                 redirect($this->session->userdata('url'));
             } else {
                 $this->session->set_flashdata('warning', '<strong>Login gagal!</strong> Silahkan cek username / password anda kembali.');

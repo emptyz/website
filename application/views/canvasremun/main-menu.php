@@ -177,8 +177,10 @@
 <div class="container clearfix">
 
     <div class="modal1 mfp-hide" id="modal-login-form">
+        
         <div class="block divcenter col-padding" style="background-color: #FFF; max-width: 400px;">
             <h4 class="uppercase ls1">Login Remunerasi</h4>
+            
             <form action="<?php echo base_url(); ?>auth/login"  method="post" class="nobottommargin clearfix" style="max-width: 300px;">
                 <div class="col_full">
                     <label for="" class="capitalize t600">Username:</label>
